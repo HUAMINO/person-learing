@@ -1,0 +1,273 @@
+/* 主体区域开始部分 */
+
+.main {
+      margin: 0px auto;
+     background-color: #f6f6f6;
+     overflow: hidden;
+     /* height: 2000px; */
+
+}
+
+.main .wrapper {
+  /* height: 500px; */
+  /* padding-top: 50px; */
+  margin-top: 50px;
+ 
+  display: flex;
+}
+.main_left {
+  width: 300px;
+  /* height: 100px; */
+  background-color: white;
+  margin-right: 34px;
+  margin-bottom: 100px;
+  
+
+}
+
+.main_left .left_list ul li{
+  border-bottom: 1px solid #f4f4f4;
+  padding-top: 44px;
+  outline-style: none;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.main_left .left_list ul p {
+  line-height: 44px;
+}
+
+.main_left .left_list ul li img {
+  width: 86px;
+  height: 86px;
+
+}
+
+.main_left .left_list ul li span {
+  visibility: hidden;
+}
+
+.main_left .left_list ul li p:hover, 
+.main_left .left_list ul li p:hover span {
+  color: #5eb69c;
+  visibility: visible;
+}
+
+.left_list ul li .vip_info{
+  width: 92px;
+  height: 26px;
+  margin: 0 auto;
+  background-color: #e16033;
+  border-radius: 13%;
+}
+.left_list ul li .vip_info img{
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.main_right {
+  width: 906px;
+  /* background-color: pink; */
+  height: 1000px;
+  /* background-color: #fff; */
+}
+
+/* 右侧内容开始 */
+
+
+/* 顶部内容部分样式 */
+
+.main_right .right_top {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
+
+}
+
+
+
+
+.main_right .top_center  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_right .top_center .box {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 给第三个盒子加竖线 */
+.main_right .top_center .special {
+  border-right: 1px solid #f4f4f4;
+   
+
+}
+
+.main_right .top_center .box .text {
+  margin-top: 10px;
+}
+
+/* 给顶部图片设置大小 */
+.main_right .top_center .box .pic img {
+  width: 25px;
+  height: 25px;
+}
+
+.main_right .top_center .box .pic span {
+  font-size: 18px;
+  color: red;
+}
+
+
+/* 我的订单开始 */
+.main_right .order {
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 10px 0px ;
+}
+
+.main_right .order .order_top {
+  margin: 10px 10px;
+}
+
+.main_right .order .order_top .cover {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* order 下面的图片 */
+
+.order .order_content {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  margin-bottom: 16px;
+}
+
+.order .order_content .pic {
+  display: flex;
+  border: 1px solid grey;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+}
+
+.order .order_content .pic .context {
+  padding-left: 20px;
+}
+
+.order .order_content .pic .context .context_buttom{
+  color: #999999;
+  font-size: 12px;
+}
+
+.order .order_content .pic .text {
+  padding-left: 120px;
+  padding-right: 50px;
+}
+
+.order .order_content .pic .text span {
+  color: red;
+}
+
+.order .order_content .pic img {
+  width: 106px;
+  height: 106px;
+}
+
+.order .order_content .price {
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+
+}
+
+.order .order_content .buttom {
+  display: flex;
+  border: 1px solid grey;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.order .order_content .price .price_content{
+  /* padding: 20px; */
+  text-align: center;
+}
+
+
+.order .order_content .buttom .zhong {
+  /* padding: 60px; */
+  text-align: center;
+}
+.order .order_content .buttom .zhong .btn_2 {
+  background-color: #5eb69c;
+  padding: 10px;
+  border-radius: 10%;
+
+}
+
+.order .order_content .buttom .zhong .btn_2 input{
+  border-style: none;
+  outline-style: none;
+  background-color: #5eb69c;
+
+}
+
+/* 收藏的商品 */
+
+.collect {
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.collect .collect_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid grey;
+}
+
+.collect .collect_main {
+  background-color: #fff;
+  padding: 0px 12px;
+}
+.collect .collect_position {
+  display: flex;
+  justify-content: center;
+}
+
+.collect .collect_position .box {
+  padding-top: 40px;
+}
+
+.collect .collect_position .box .pic img {
+  width: 160px;
+  height: 160px; 
+}
+
+
+
+.collect .collect_position .box .text {
+  padding-top: 20px;
+}
+
+.collect .collect_position .box .price {
+  padding-top: 10px;
+  color: red;
+  padding-bottom: 20px;
+}

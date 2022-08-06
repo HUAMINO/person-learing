@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* 单行的省略 要根据宽度来搭配超出的内容 */
+  .one {
+    width: 200px;
+    height: 100px;
+    background-color: pink;
+    /* 超出的内容不换行 */
+    white-space: nowrap; 
+    overflow: hidden;
+    /* 超出的内容用点号代替 */
+    text-overflow: ellipsis;
+  }
+
+  .another {
+    /* 需要根据高度来确定使用 */
+     width: 200px;
+     height: 63px;
+     background-color: antiquewhite;
+    /* 根据行数来确定第几行开始省略  改变数字就可以改变省略号替代的行数*/
+
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
+<body>
+  <div class="one">
+    特殊的对但事实上所所所所狗狗狗发发发发发发付付付付
+  </div>
+  <div class="another">
+    的点点滴滴多多多多多灌灌灌发发发反反复复反反复复灌多多多多多多多多多多多多少时诵诗书所所所所所所所
+  </div>
+  
+</body>
+</html>

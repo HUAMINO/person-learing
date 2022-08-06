@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  * {
+    list-style: none;
+    text-decoration: none;
+  }
+  .box {
+    width: 480px;
+    height: 270px;
+    overflow: hidden;
+
+  }
+
+  ul {
+    width: 1440px;
+    height: 270px;
+    overflow: hidden;
+    border: 1px solid pin;
+
+  }
+  
+  ul li img{
+    width: 480px;
+    height: 270px;
+    float: left;
+    animation: move 4s infinite;
+
+  }
+
+  @keyframes move {
+    0% {
+        transform: translate(0,0);
+       } 
+
+    100% {
+        transform: translate(-3660px,0);
+    } 
+  }
+</style>
+<body>
+  <div class="box">
+    <ul>
+      <li><img src="./images/1.jpg" alt=""></li>
+      <li><img src="./images/2.jpg" alt=""></li>
+      <li><img src="./images/3.jpg" alt=""></li>
+      <li><img src="./images/4.jpg" alt=""></li>
+      <li><img src="./images/5.jpg" alt=""></li>
+      <li><img src="./images/6.jpg" alt=""></li>
+      <li><img src="./images/7.jpg" alt=""></li>
+    </ul>
+  </div>
+</body>
+</html>

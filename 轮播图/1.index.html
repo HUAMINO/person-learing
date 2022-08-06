@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #outer {
+    width: 340px;
+    height: 320px;
+    margin: 50px auto;
+    background-color: rgb(255, 32, 7);
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #imgList {
+    list-style: none;
+    /* width: 1276px; */
+    position: absolute;
+    transition: all 2s;
+  }
+
+
+
+  #imgList li {
+    float: left;
+    margin: 0 10px;
+  }
+
+  #navDiv {
+    position: absolute;
+    bottom: 15px;
+
+  }
+
+  a {
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(13, 255, 0);
+    margin: 0 5px;
+    opacity: 0.5;
+
+  }
+
+  #navDiv a:hover {
+    background-color: black;
+  }
+</style>
+
+<script>
+  window.onload = function () {
+    /* 获取img */
+    var img = document.getElementById("imgList");
+    var imgArr = document.getElementsByTagName("img");
+    imgList.style.width = 340 * imgArr.length + "px";
+
+    var navDiv = document.getElementById("navDiv");
+    var outer = document.getElementById('outer');
+    navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + 'px';
+
+    var index = 0;
+    var aAll = document.getElementsByTagName('a')
+    aAll[index].style.backgroundColor = 'black';
+    /* 点击a标签切换图片 */
+
+    for (var i = 0; i < aAll.length; i++) {
+      aAll[i].num = i;
+      aAll[i].onclick = function () {
+        index = this.num;
+        imgList.style.left = -340 * index + 'px';
+        /* 排他思想。 */
+        for (var i = 0; i < aAll.length; i++) {
+          
+          aAll[i].style.backgroundColor = '';
+        }
+        this.style.backgroundColor = 'black';
+      }
+    }
+    // 
+    }
+    var time = 0
+
+    setInterval(function () {
+        time++
+        imgList.style.left = -340 * time + 'px';
+        if(time > 2){
+          time =-1;
+        }
+
+      }, 3000)
+
+</script>
+
+<body>
+  <div id="outer">
+    <ul id="imgList">
+      <li><img src="./img/collect_goods_1.jpg" alt=""></li>
+      <li><img src="./img/collect_goods_2.jpg" alt=""></li>
+      <li><img src="./img/collect_goods_3.jpg" alt=""></li>
+      <li><img src="./img/collect_goods_4.jpg" alt=""></li>
+
+    </ul>
+
+    <div id="navDiv">
+      <a href="javaScript:;"></a>
+      <a href="javaScript:;"></a>
+      <a href="javaScript:;"></a>
+      <a href="javaScript:;"></a>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

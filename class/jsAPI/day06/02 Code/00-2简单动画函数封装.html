@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 500 -->
+    <div>测试div</div>
+    <!-- 800 -->
+    <span>测试span</span>
+    <script>
+
+    // 封装一个简单的动画函数
+    var div = document.querySelector('div');
+    var span = document.querySelector('span');
+
+     function animate(obj ,target) {
+        obj.timer = setInterval(function(){   
+            if(obj.offsetLeft >= target){
+                clearInterval(this.timer);
+            }  
+            obj.style.left = obj.offsetLeft + 1 + 'px';          
+        },15)          
+    }
+    animate(div,130);
+    animate(span,150)
+    
+        
+    </script>
+</body>
+
+</html>

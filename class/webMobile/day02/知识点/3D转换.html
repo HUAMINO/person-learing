@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+body {
+  /* shi */
+    perspective: 900px;
+    text-align: center;
+  }
+
+.box1 {
+    margin: 5px auto;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(223, 51, 80);
+    
+    transition: all 2S;
+
+}
+
+.box1:hover {
+    transform: rotateX(45deg);
+}
+
+
+.box2 {
+    margin: 5px auto;
+    width: 200px;
+    height: 200px;
+    background-color: BLUE;
+    transition: all 2S;
+}
+
+.box2:hover {
+  transform: rotateY(45deg);
+}
+
+.box3 {
+    margin: 5px auto;
+    width: 200px;
+    height: 200px;
+    background-color:RED;
+    transition: all 2S;
+}
+
+.box3:hover
+{
+    transform: rotateZ(45deg);
+}
+</style>
+<body>
+  <h2>x轴</h2>
+  <div class="box1"></div>
+  <h2>Y轴</h2>
+  <div class="box2"></div>
+  <h2>Z轴</h2>
+  <div class="box3"></div>
+</body>
+</html>

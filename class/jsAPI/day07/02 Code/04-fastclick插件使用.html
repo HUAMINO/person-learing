@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable = no"> -->
+
+    <!-- <meta name="viewport" content="user-scalable=no" > -->
+    <!-- user-scalable=no ：禁止用户自由缩放，runoob -->
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        /* fastclick解决爆红问题 */
+      *{ touch-action: pan-y;}
+
+
+        
+    </style>
+    
+</head>
+
+
+<body>
+    <div></div>
+    <script src="./fastclick.js"></script>
+
+    <script>
+
+        if('addEventListener' in document){
+            document.addEventListener('DOMContentLoaded',function(){
+                FastClick.attach(document.body);
+            },false);
+        }
+        var div = document.querySelector('div');
+        var k = 0;
+        var j = 0;
+        // 记录点击事件后相差的时间300毫秒
+
+        /***
+         * descrition
+        */
+
+        addEventListener('touchstart',function(){
+            k = +Date.now();
+            console.log('touchstart');
+        })
+
+        addEventListener('click',function(){
+            j = +Date.now();
+            console.log(j - k);
+            console.log('click');
+        })
+
+
+        // 产生300ms延迟的原因
+        // 由于移动端会有双击缩放的这个操作，因此浏览器在click之后要等待300ms，
+        // 看用户有没有下一次点击，也就是这次操作是不是双击。
+
+
+        // 解决方案一；
+        // <!-- <meta name="viewport" content="user-scalable=no" > -->
+        // <!-- user-scalable=no ：禁止用户自由缩放，runoob -->
+
+        // 结局方案二：
+        //引入js
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner">1111</div>
+    <div class="create">222</div>
+    <script>
+        //1. document.write()
+        //2. element.innerHTML
+        //3. document.createElement()
+
+        // 1. document.write() 新建内容, 会重写整个页面, 会造成页面重绘
+        // 不建议使用
+        var btn = document.querySelector('button')
+        // btn.onclick = function () {
+        //     document.write('<p>我是新建的元素</p>')
+        // }
+
+        
+        // 2. element.innerHTML  
+        // 因为它识别html标签, 所以可以在某个元素内部创建其他标签
+        // 获取inner这个div
+        // innerHTML 会 替换掉原来元素中的内容
+        var inner = document.querySelector('.inner')
+        btn.onclick = function () {
+            inner.innerHTML = '<p>我是新创建的</p>'
+            // inner.innerHTML = '' // 可以删除内容
+        }
+
+        // // 3. document.createElement('标签名')
+        // var create = document.querySelector('.create')
+        // btn.onclick = function () {
+        //     var h2 = document.createElement('h2')
+        //     h2.innerHTML = '我是内容标题'
+        //     // 我们向create这个div 末尾,追加新创建元素, 原来的内容存在
+        //     create.appendChild(h2)
+        // }
+
+
+        
+
+    </script>
+</body>
+
+</html>

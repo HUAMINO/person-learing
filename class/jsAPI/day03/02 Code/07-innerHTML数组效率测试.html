@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>效率测试</title>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function fn() {
+        // var d1 = +new Date();
+        console.time()
+        var array = [];
+        for (var i = 0; i < 1000; i++) {
+            array.push('<div style="width:100px; height:2px; border:1px solid blue;"></div>');
+        }
+        // array.join  是将数组转为字符串
+        // 使用innerHTML  数组形式的创建元素  效率高 
+        document.body.innerHTML = array.join('');
+        // var d2 = +new Date();
+        console.timeEnd()
+        // console.log(d2 - d1);
+    }
+    fn();
+    
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0 atuo;
+    padding: 0;
+  }
+  
+  body {
+    perspective: 800px;
+  }
+  ul {
+    text-align: center;
+
+  }
+  li {
+    width: 60px;
+    height: 60px;
+    background-color: greenyellow;
+    list-style: none;
+    float: left;
+    line-height: 60px;
+    transition: all 2s;
+  }
+  .first {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s;
+    transform: rotateY(20deg) ;
+
+  }
+  .font {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-color: rgb(94, 103, 82);
+    line-height: 60px;
+    transform: translateZ(30px);
+
+  }
+
+  .back {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-color: rgb(139, 231, 19);
+    line-height: 60px;
+    transform: rotateX(90deg) translateZ(30px) ;
+
+  }
+   
+
+ .first:hover {
+    transform: rotateX(-90deg);
+  }
+</style>
+<body>
+  <div class="box">
+    <ul>
+     <div class="first"> 
+           <li class="font">首页</li>
+           <li class="back">后面</li>
+    </div>
+
+    <!-- <div>
+            <li>Login</li>
+            <li class="back"></li>
+    </div>
+     <div>
+      <li>注册</li>
+      <li class="back"></li>
+     </div> -->
+    </ul>
+  </div>
+</body>
+</html>

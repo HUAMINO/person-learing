@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+    <script>
+        // 1.利用对象字面量创建对象 {}
+
+        // var  obj = {
+        //     name:'张三丰',
+        //     age:108,
+        //     sex:'难',
+        //     dataJi:function() {
+        //         console.log('打太极');
+        //         // return 0;
+        //     }
+        // }
+        // console.log(obj.dataJi());
+
+
+        var obj =  new Object();
+        obj.name= '张无忌';
+        obj.age = 100;
+        obj.wuGong = function () {
+            console.log("九阳神功");
+            console.log(this);
+        }
+        obj.wuGong();
+
+        // console.log(obj);
+        // console.log(obj.wuGong());
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

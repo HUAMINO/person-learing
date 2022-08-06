@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body></body>
+  <script>
+// 1. 通过new构造函数得到一个ajax请求的实例对象
+let xhr = new XMLHttpRequest()
+
+// 2. 准备好这次请求的method和url
+xhr.open('get', 'http://ajax-base-api-t.itheima.net/api/getbooks')
+
+xhr.timeout = 1000 // 3s
+
+xhr.ontimeout = function () {
+  alert('您当前网络连接不稳定，请稍后再试')
+}
+
+// 3. 发射
+xhr.send()
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    // 代表响应全部回来了
+    console.log(xhr.response)
+  }
+}
+    
+  </script>
+</html>

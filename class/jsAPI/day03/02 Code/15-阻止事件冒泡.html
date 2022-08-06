@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            text-align: center;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: purple;
+            line-height: 200px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son儿子</div>
+    </div>
+    <script>
+    // 获取元素
+    var father = document.querySelector('.father');
+    var son = document.querySelector('.son');
+
+    // addEventListener的第三个参数是false或者不写，程序处在事件冒泡阶段，
+    // 从里往外一层一层的找目标
+    // 先找son  ---- father ---- body ---- html --- document文档
+    // 也就是我们点击了son 就先执行自己的代码，
+    // 然后事件冒泡, 被father监听到, 执行father的代码
+    son.addEventListener('click',function(event) {
+        console.log('我是son');
+        // event.stopPropagation();
+        //阻止事件冒泡 
+        //click这个事件，传播到这里之后，不在往上传输了！
+        event.stopPropagation
+
+    })
+    father.addEventListener('click',function() {
+        console.log('father');
+
+    })
+    
+    </script>
+</body>
+
+</html>

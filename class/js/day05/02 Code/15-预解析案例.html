@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 预解析案例
+        // 案例1
+        var num = 10;
+        fun();
+
+        function fun() {
+            console.log(num);
+            var num = 20;
+        }
+        // 相当于执行了以下操作
+
+        // 案例2
+
+        // // 相当于以下代码
+
+        // // 案例3
+        var a = 18;
+        f1();
+
+        function f1() {
+            var b = 9;
+            console.log(a);
+            console.log(b);
+            var a = '123';
+        }
+        // 相当于以下代码
+
+        // 案例4
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 相当于以下代码
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

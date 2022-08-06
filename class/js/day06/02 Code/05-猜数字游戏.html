@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 猜数字游戏
+    // 1.随机生成一个1~10 的整数  我们需要用到 Math.random() 方法。
+    // 2.需要一直猜到正确为止，所以需要一直循环。
+    // 3.while 循环更简单
+    // 4.核心算法：使用 if  else if 多分支语句来判断大于、小于、等于。
+
+    // 要求用户猜 1~50之间的一个数字 但是只有 10次猜的机会
+
+
+    function Run(num1, num2) {
+      return Math.floor((Math.random() * (num2 - num1) + num1))
+
+    }
+
+    var random = Run(1, 10);
+    console.log(random)
+    var count = 3;
+    while (true) {
+      var shu = prompt("请输入1~10的随机数");
+      count--;
+      if (count < 0) {
+        alert("你的次数用完了");
+      }
+      if (shu > random) {
+        alert("你猜大了");
+      } else if (shu == random) {
+        alert("恭喜你猜对了");
+        break;
+      } else if (shu < random) {
+        alert("你猜小了");
+      }
+
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

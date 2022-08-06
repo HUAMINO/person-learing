@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function resArr(arr) {
+            var newArr = [];
+            for(var i = 0; i<arr.length; i++) {
+                newArr[i] = arr[arr.length - 1 -i];
+            }
+            return newArr;
+        }
+        // 利用函数翻转任意数组 reverse 翻转
+        var resArr = resArr(['dssss','dddddddd']);
+        console.log(resArr);
+        // var resArr = resArr();
+
+
+        resArr.reverse();  
+        console.log(resArr);
+       var ccc= resArr.slice(0,1);
+        console.log(ccc);
+
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

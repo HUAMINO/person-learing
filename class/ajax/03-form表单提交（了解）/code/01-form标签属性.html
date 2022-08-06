@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="https://fanyi.baidu.com/#en/zh/multiple"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+      target="_self"
+    >
+      <input type="text" name="username" id="username" />
+      <input type="password" name="password" id="password" />
+      <button>button 提交</button>
+      <!-- input框必须有type="submit" 才能触发form标签的submit事件 -->
+      <input type="submit" />
+    </form>
+
+    <!-- 在form标签外的button按钮不能触发form标签的submit事件 -->
+    <button>提交</button>
+
+    <script>
+      document.querySelector('form').addEventListener('submit', function (e) {
+        // 阻止表单的默认提交行为，目的：不让页面刷新
+        e.preventDefault()
+
+        let username = document.querySelector('#username').value
+        let password = document.querySelector('#password').value
+
+        // 发送ajax请求
+        const xhr = new XMLHttpRequest()
+        xhr.open()
+        xhr.send()
+        xhr.onreadystatechange = function () {}
+      })
+    </script>
+  </body>
+</html>

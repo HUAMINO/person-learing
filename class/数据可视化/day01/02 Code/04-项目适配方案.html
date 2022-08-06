@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>项目适配方案</title>
+    <script src="./js/flexible.js"></script>
+
+    <style>
+        div{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: pink;
+        }
+         /* 实现rem适配 */
+        /* width 小于等于1024的时候 */
+        @media screen and (max-width: 1024px) {
+            html {
+                font-size: 42.66px !important;
+            }
+        }
+
+        /* width大于等于1920的时候 */
+        @media screen and (min-width: 1920px) {
+            html {
+                font-size: 80px !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

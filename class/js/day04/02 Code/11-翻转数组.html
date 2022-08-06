@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 将数组 ['red', 'green', 'blue', 'pink', 'purple'] 的内容反过来存放
+        // 1、声明一个新数组 newArr
+        // 2、把旧数组索引号第4个取过来（arr.length - 1)，给新数组索引号第0个元素 (newArr.length)
+        // 3、我们采取 递减的方式  i--
+        var arr = ['red', 'green', 'blue', 'pink', 'purple'];
+        var newArr = [];
+
+        for (i = arr.length - 1; i >=0; i++){
+            newArr[newArr.length] =  arr[i];
+        }
+        console.log(newArr);
+
+        //拓展 arr.reverse(); //翻转原数组  但是原数组的值被改变
+        arr.reverse();
+        console.log(arr);
+
+        //2. 不改变原数组，复制一份原数组
+        // arr.slice() 复制了一份原数组，在翻转。
+        var newArr = arr.slice().reverse();
+        console.log(newArr);
+        console.log(arr);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- vw相对单位  相当于视口（当前设备的屏幕尺寸） 1vw = 视口宽度的百分之一 -->
+
+<style>
+.box {
+  /* width: 50vw; */
+  width: 50%;
+  height: 500px;
+  background-color: antiquewhite;
+}  
+
+.son {
+  width: 50%;
+  height: 300px;
+  background-color: red;
+}
+</style>
+<body>
+  <div class="box">
+    <div class="son"></div>
+  </div>
+  
+
+  <!-- 百分比和vw的区别
+  1.百分比 相对于当前的父元素的宽度
+  2.1vw永远指的是视口的百分之一，和父容器的宽度无关
+
+
+  vw方案和rem方案的对比
+  1.rem适配的原理较为复杂
+  2.vw适配原理简单
+  3.rem需要js辅助
+  4.vw不需要js自动获取 -->
+</body>
+</html>

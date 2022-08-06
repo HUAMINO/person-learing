@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // 语法:  window.setInterval(func, delay)
+    // window可以省略, func 回调函数,  delay 延迟时间, 
+    // 每隔一段延迟时间, 执行一次 func, 只要不清除定时器, 会一直执行.
+
+    setInterval(function(){
+        console.log('ddddddddddddddd');
+    },5000)
+
+    var vd = function() {
+        console.log('lalalalala');
+    }
+
+    setInterval(vd,5000);
+
+
+document.addEventListener('DOMContentLoaded',function(){
+    var timer = setInterval(function(){
+        console.log('明天休息');
+    },5000)
+    
+    var btn = document.querySelector('button')
+    btn.addEventListener('click',function() {
+        clearInterval(timer)
+    })
+})
+    </script>
+    <button>清除定时器</button>
+</body>
+
+</html>

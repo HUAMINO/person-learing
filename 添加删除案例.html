@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<script>
+  window.onload = function () {
+    var allA = document.getElementsByTagName("a");
+ 
+    for(var i = 0; i < allA.length ; i++) {
+      allA[i].onclick = function () {
+        // console.log(allA);
+        // alert("hellp");
+        var tr = this.parentNode.parentNode;
+        var name = tr.firstElementChild;
+       
+
+       
+        var flag =   confirm('确认删除'+ name.innerHTML+ '吗？')
+        if(flag == true) {
+          tr.parentNode.removeChild(tr);
+        }
+        return false;
+      }
+    }
+
+    /* 添加员工的功能 */ 
+    //点击按钮以后，将员工的信息添加到表格中
+
+    /* 获得按钮的button */
+    var addEmpButton = document.getElementById("addEmpButton");
+    addEmpButton.onclick = function () {
+      // alert("dddd")
+      var nameT = document.getElementById("empName").value;
+      var email = document.getElementById("Email").value;
+      var salary = document.getElementById("Salary").value;
+      // alert(email)
+      var tr = document.createElement("tr");
+
+      //创建td
+      var nameTd = document.createElement("td");
+      var emailTd = document.createElement("td");
+      var salaryTd = document.createElement("td");
+      var aTd = document.createElement("td");
+      var a = document.createElement("a");
+      //创建文本节点
+      var nameText = document.createTextNode(nameT);
+      var emailText = document.createTextNode(email);
+      var salaryText = document.createTextNode(salary);
+      var delText = document.createTextNode("Delete");
+      
+      //将文本添加到td中
+      nameTd.appendChild(nameText);
+      emailTd.appendChild(emailText);
+      salaryTd.appendChild(salaryText);
+      a.appendChild(delText);
+
+      aTd.appendChild(a);
+      //将td添加到tr中
+      tr.appendChild(nameTd);
+      tr.appendChild(emailTd)
+      tr.appendChild(salaryTd)
+      tr.appendChild(aTd)
+
+      a.href='dddd';
+      a.onclick = function () {
+        // console.log(allA);
+        // alert("hellp");
+        var tr = this.parentNode.parentNode;
+        var name = tr.firstElementChild;
+       
+
+       
+        var flag =   confirm('确认删除'+ name.innerHTML+ '吗？')
+        if(flag == true) {
+          tr.parentNode.removeChild(tr);
+        }
+        return false;
+      }
+      
+      /* 获取table */
+      // var employeeTable = document.getElementById("employeeTable");
+      //获取body
+      var tbody = document.getElementsByTagName('tbody')[0];
+      tbody.appendChild(tr)
+
+
+    }
+    
+
+  }
+</script>
+<body>
+  <table id="employeeTable" border="1px" cellpadding="10px" cellspacing="0">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Salary</th>
+      <th>&nbsp;</th>
+    </tr>
+
+    <tr>
+      <td>TOm</td>
+      <td>Emddail</td>
+      <td>Salary</td>
+      <td><a href="deleteEmp?id=001">Delete</td>
+    </tr>
+
+    <tr>
+      <td>张三</td>
+      <td>Emddail</td>
+      <td>Salary</td>
+      <td><a href="deleteEmp?id=001">Delete</td>
+    </tr>
+
+    <tr>
+      <td>李雷</td>
+      <td>Emddail</td>
+      <td>Salary</td>
+      <td><a href="deleteEmp?id=001">Delete</td>
+    </tr>
+    
+  </table>
+
+<div id = "formDiv" style="border: 1px solid ; width: 400px;">
+    <h4>添加新员工</h4>
+    <table>
+
+      <tr >
+        <td class="word">name:</td>
+        <td class="inp">
+          <input type="text" name="empName" id="empName">
+        </td>
+      </tr>
+
+      <tr>
+        <td class="word">Email:</td>
+        <td class="inp">
+          <input type="text" name="Email" id="Email">
+        </td>
+      </tr>
+
+      <tr>
+        <td class="word">Salary:</td>
+        <td class="inp">
+          <input type="text" name="Salary" id="Salary">
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">提交:
+          <button id="addEmpButton" value="abc">
+            submit
+          </button>
+        </td>
+     
+      </tr>
+
+    
+    </table>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fn() {
+            console.log(arguments);
+            console.log(arguments.length);
+            console.log(arguments[2]);
+            console.log('----------------');
+
+            for(var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i])
+        }
+
+        }
+        var res = fn(1,2,3,4)
+
+      
+        // var res = fn(1,2);
+        // console.log(res);
+
+        // var arr = [1,2,3];
+        // arr.push(5);
+        // console.log(arr)
+
+        //arguments
+        //所有的函数都内置了一个arguments对象。
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

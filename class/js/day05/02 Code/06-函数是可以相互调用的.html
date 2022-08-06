@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 函数是可以相互调用的
+
+        // 看输出什么?
+        // function fn1() {
+        //     console.log(111);
+        //     fn2();  // 在fn1 函数里面调用了 fn2 函数
+        //     console.log('fn1');
+        // }
+
+        // function fn2() {
+        //     console.log(222);
+        //     console.log('fn2');
+        // }
+        // fn1();
+
+        //----------------------------
+
+        function run(year) {
+            var flag = false;
+            if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                flag = true;
+            }
+            return flag;
+        }
+
+        var year = prompt("请输入当前年份");
+
+        function febDay() {
+            if(run(year)) {
+                alert('当前是闰年，2月有29天');
+            }else{
+                alert('不是闰年，今年有28天');
+            }
+        }
+        febDay();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

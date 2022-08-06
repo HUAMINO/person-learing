@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>// 原数据
+        let obj = {
+          uname: 'aaa',
+          age: 18,
+          like_color: ['red', 'green'],
+          info: {
+            weight: '90kg',
+            height: '150cm',
+            three_dimensions: [40, 60, 100],
+          },
+        }
+        
+        function deepCopy(o) {
+      if (Array.isArray(o)) {
+        // 如果原数据是数组，就创建一个新数组
+        let x = []
+        o.forEach(item => {
+          if (typeof item === 'object') {
+            // 如果是复杂数据类型，则再调用deepCopy()，把返回值push到新数组中
+            x.push(deepCopy(item))
+          } else {
+            // 如果item是简单数据类型，则直接push到新数组中
+            x.push(item)
+          }
+        })
+        // 全部push完毕后把完整的新数组返回
+        return x
+      } else if (typeof o === 'object') {
+        // 如果原数据是对象，就创建一个新对象
+        let x = {}
+        for (var k in o) {
+          let item = o[k]
+          if (typeof item === 'object') {
+            // 如果是复杂数据类型，则再调用deepCopy()，把返回值赋值到新对象中
+            x[k] = deepCopy(item)
+          } else {
+            // 如果item是简单数据类型，则直接赋值到新对象中
+            x[k] = item
+          }
+        }
+        // 全部添加完毕后把完整的新对象返回
+        return x
+      } else {
+        // 如果原数据是简单类型，则直接返回原数据
+        return o
+      }
+    }
+    let y = deepCopy(obj)
+    y.info.three_dimensions[0] = 999
+    console.log(y)
+    console.log(obj) 
+    </script>
+</body>
+</html>

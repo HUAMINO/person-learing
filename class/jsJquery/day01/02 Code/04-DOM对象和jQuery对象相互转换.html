@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <!-- [ˈmjuːtɪd] 静音 chrome -->
+    <video src="mov.mp4" muted></video>
+    <script>
+
+
+
+        // 1. DOM对象转换为jQuery 方法只有一种
+        // $(myVideo)  ==> 将dom元素/对象 用$()包装起来
+        var myVideo = document.querySelector('video');
+        myVideo.play(); // ok  可以播放
+        
+        // $(myVideo).play()  // error jQuery 对象没有play()这个方法
+        // DOM video 标签，有一个原生的方法 play();
+
+        // 2. jQuery对象转换为DOM对象， 方法有两种
+
+        console.log($('video'));
+        console.log($('video')[0]);
+
+
+       //2.1 jQuery 对象.get(索引号)  //get()  是jQuery 对象的一个方法。
+       console.log($('video').get(0)); 
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

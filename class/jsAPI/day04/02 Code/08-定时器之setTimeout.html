@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 语法: window.setTimeout(调用函数, 延迟时间)
+        // 1. window 可以省略
+        // 2. 调用函数, 可以直接写函数, 还可以传入函数名, 还可以写 `函数名()` 最后一种不推荐
+        // 3. 延只执行一次迟时间 以毫秒为单位, 可以省略, 省略的话默认为0, 但是, 最小延迟时间 >=4ms
+        // 4. setTimeout 
+        /* 第一种 */
+        setTimeout(function(){
+            console.log('dddddd');
+        },1000)
+
+        /* 第二种写函数名的方式 */
+        function fn() {
+            console.log('dddddddddddddddddd');
+        }
+        setTimeout(fn,5000);
+
+
+    </script>
+</body>
+
+</html>

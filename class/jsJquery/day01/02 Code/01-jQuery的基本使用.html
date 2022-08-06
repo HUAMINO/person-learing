@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+<script src="./jquery.min.js"></script>
+
+    <script>
+        // 页面加载事件，所有元素加载完成之后才生效
+        // window.onload  
+        // document.addEventListener('load', function () {
+        //     var div = document.querySelector('div');
+        //     div.style.display = 'none';
+        // })
+        // dom元素加载完成之后在生效。
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     var div = document.querySelector('div');
+        //     div.style.display = 'none';
+        // })
+
+        // jquery 的入口函数 等效于DOMContentLoaded
+        // 当我们页面Dom元素加载完成之后，执行内部代码。
+        // 写法一：
+        $(document).ready(function () {
+            $('div').hide();
+        })
+
+        // 2.写法二
+
+        // $(function () {
+        //     $('div').hide();
+        // })
+        // 入口函数的作用，等待DOM元素加载完，执行内部代码，jquery对DOMContentLoaded 做了封装，监听了页面加载事件。
+
+        
+        console.log(window.jQuery);
+        console.log($ === jQuery)
+    
+    
+    </script>
+
+</head>
+
+<body>
+    <div></div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            position: absolute;
+            left: 200px;
+            width: 200px;
+            height: 200px;
+            background: orange;   
+            transition: all 10s;
+            
+            animation: move 1s linear infinite;
+        }
+
+        @keyframes move {
+            0%{
+                left: 0px;
+
+            }
+            25%{
+                left: 100px;
+                transform: rotate(360deg);
+
+            }
+            50%{
+                left: 200px;
+                transform: rotate(360deg);
+            }
+            100%{
+                left: 0px;
+
+            }
+        }
+        .test:hover{
+            transform: rotate(180deg);
+
+        }
+
+        .rotate{
+            transform: rotate(360deg);
+        }
+        /* 使用@keyframes定义一个动画 */
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+    <script>
+        // 1. transition  和 transform 配合使用
+        // 点击这个div 让他旋转180度， 持续时间 .3s
+        // 点一次旋转180deg， 再点一次恢复初始状态 
+
+        var div = document.querySelector('.test');
+        div.addEventListener('click',function(){
+            div.classList.toggle('rotate')
+        })
+
+        
+
+        
+
+        // 2. @keyframes 和 animation 配合使用
+        /*  @keyframes animationname {
+            keyframes-selector {
+                css-styles：
+                }
+            }
+            参数解释：
+            1. animationname 必须 定义动画名字
+            2. keyframes-selector 必须 定义动画时长百分比
+            {
+                0 - 100%
+                from  等价于(0%)
+                to  等价于 (100%)
+                0% 是动画的开始时间，100% 动画的结束时间, 应该始终定义0% 和 100%.
+            }
+            3. css-styles  必须 定义 css 样式 可以是transform */
+
+
+
+    </script>
+</body>
+</html>

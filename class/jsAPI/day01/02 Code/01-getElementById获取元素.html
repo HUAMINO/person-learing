@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2019-9-9</div>
+    <p id="demo"></p>
+    <div id="top">我是顶部</div>
+    <script>
+
+        // 1. 因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面
+        var div = document.getElementById('time');
+        console.log(div)
+        /* 2.返回一个元素对象 */
+        console.log(typeof div);
+        /* 3.console.dir() 打印一个对象的所有属性和方法*/
+        console.dir(div);
+        var p = document.getElementById('demo');
+        console.log(p);
+    </script>
+</body>
+
+</html>

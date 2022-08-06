@@ -1,0 +1,187 @@
+/* 主题css内容 */
+.main {
+  margin: 0;
+  padding: 16px;
+  background-color: rgb(247,247,247);
+}
+
+.top {
+  height: 85px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  border-radius: 2%;
+  margin-bottom: 12px;
+}
+
+.icon-location {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #54B196;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 11px;
+  
+}
+
+.two {
+  flex: 1;
+  height: 85px;
+  font-size: 14px;
+}
+.icon-more {
+  display: flex;
+  width: 44px;
+  height: 85px;
+  color: #54B196;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* 第二个卖货信息 */
+
+.next {
+  background-color: #fff;
+  display: flex;
+  height: 120px;
+  padding: 0 10px;
+  align-items: center;
+  margin-bottom: 12px;
+
+}
+
+.next .next_left {
+  width: 85px;
+  height: 85px;
+  margin-right: 10px;
+  /* margin-right: 20px; */
+}
+
+.next .next_left img {
+  width: 85px;
+  height: 85px;
+  vertical-align: middle;
+}
+
+.next .next_middle {
+  display: flex;
+  flex: 1;
+  /* align-self: center; */
+}
+
+.next .next_middle .text {
+  flex: 1;
+  margin-top: 3px;
+}
+
+.next .next_middle .text .title {
+  font-size: 13px;
+}
+
+.next .next_middle .text .pink{
+  background-color: #f7f7f8;
+  font-size: 12px;
+  color: #888888;
+}
+
+.next .next_middle .text .price {
+  color: red;
+}
+
+.next .next_middle .text .price .normal {
+  font-size: 12px;
+}
+
+.next .next_middle .price {
+  display: flex;
+  align-items: center;
+}
+
+.next .next_middle .price .spevcial_prive {
+  font-size: 13px;
+}
+
+.next .next_middle .last {
+  width: 40px;
+  height: 40px;
+}
+
+/* 配送东西的内荣 */
+
+.deliver {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+
+}
+
+.deliver .middle {
+  flex: 1;
+}
+
+.deliver .left {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.deliver .left,
+.deliver .right{
+  width: 100px;
+  height: 100px;
+}
+
+.deliver .left ul {
+  /* display: flex; */
+  align-items: center;
+  flex-direction: column;
+}
+.deliver .left ul li {
+  align-self: center;
+}
+.deliver .middle span{
+  font-size: 12px;
+  color: #888888;
+
+}
+
+.deliver .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deliver .right span {
+  font-size: 14px;
+
+}
+
+.deliver .right .ding {
+  margin-top: 10px;
+}
+
+.deliver .right .buttom {
+  margin-bottom: 12px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  height: 80px;
+  background-color: #fff;
+}
+
+.container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

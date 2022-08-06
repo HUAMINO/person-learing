@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        // https://juejin.cn/post/6844903729460674574
+        $(function() {
+            $("div").on("click", function() {
+                console.log(111)
+            })
+            // 1.元素.click();
+            // $('div').click();
+
+            // 2. 元素.trigger('事件')  自动触发，同时会触发事件的默认行为
+            // 比如input框获取焦点后，会自动光标闪动
+
+            // $('div').trigger('click')
+
+            $('input').on('focus',function(){
+                console.log('input框获取了焦点');
+            })
+
+            // trigger 触发
+            $('input').trigger('focus')
+
+            // 3. 元素.triggerHandler('事件')  自动触发，不触发默认行为
+            $('input').triggerHandler('focus')  //这个时候input光标不会闪动
+
+            // a 标签有个默认行为，点击之后会跳转
+            // Q 想要自动触发a标签的点击事件 ？ 可以先给a标签注册一个点击事件
+            $('a').on('click',function(){
+                console.log('点击了a标签');
+            })
+
+            // 针对a标签，自动触发click事件，用jquery方式，trigger并不能触发跳转的默认行为
+
+            // 1. jquery对象专为DOM 对象，利用原生事件触发
+            $('a')[0].click()  //ok
+            // $('a').trigger('click')  //不行
+
+            // 2. 在a标签内添加一个元素，利用子元素事件冒泡触发
+            $('span').trigger('click')
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <a href="http://www.baidu.com">跳转到百度</a> -->
+    <a href="http://www.baidu.com"><span>跳转</span></a>
+    <div></div>
+    <input type="text">
+</body>
+
+</html>

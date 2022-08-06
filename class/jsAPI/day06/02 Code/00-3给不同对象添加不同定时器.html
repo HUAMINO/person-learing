@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击夏雨荷才走</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        // 1. 获取元素
+        var div = document.querySelector('div')
+        var span = document.querySelector('span')
+        var button = document.querySelector('button')
+ 
+
+        function animate(obj, target) {
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 15)
+        }
+
+        button.addEventListener('click',function(){
+            animate(span,500);
+
+        })
+
+
+    </script>
+</body>
+
+</html>

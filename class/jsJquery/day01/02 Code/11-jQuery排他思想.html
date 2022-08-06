@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<script>
+    
+    $(function() {
+        // 1. 获取元素
+        // 2. 注册事件
+        // 3. 编写事件处理程序
+        $('button').click(function(){
+            $(this).css('background','pink');
+            $(this).siblings().css('background','');
+
+        })
+
+
+
+    })
+</script>
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+
+</body>
+
+<script>
+    var btns = document.querySelectorAll('button');
+
+    // for(var i =0; i <btns.length; i++){
+    //     btns[i].onclick =  function(){
+    //         for(var i =0; i< btns.length; i++){
+    //             this.style.backgroundColor = '';
+    //         }
+
+    //         this.style.backgroundColor = 'red'
+    //     }
+    // }
+</script>
+</html>

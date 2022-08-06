@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .box {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    background-color: pink;
+    /* 改变主轴的竖着拍还是横着拍 */
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+
+  .pic {
+    width: 150px;
+    height: 150px;
+    /* display: flex; */
+    background-color: red;
+  }
+
+  .text {
+    width: 150px;
+    height: 150px;
+    background-color: grey;
+  }
+
+  .pic .son1 {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(227, 145, 145);
+  }
+
+  .pic .son2 {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+  }
+
+</style>
+<body>
+  <div class="box">
+   <div class="pic">
+     <!-- <div class="son1"></div>
+     <div class="son2"></div> -->
+   </div>
+   <!-- <p>文字居中</p> -->
+   <div class="text"></div>
+
+  </div>
+</body>
+</html>

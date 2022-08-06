@@ -1,0 +1,27 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  /* 嵌套写法 */
+}
+.box .box_left {
+  width: 50px;
+  height: 50px;
+  background-color: #00ccff;
+  /* 伪类 */
+}
+.box .box_left p {
+  width: 50px;
+  font-size: 14px;
+  color: red;
+}
+.box .box_left:hover {
+  color: antiquewhite;
+}
+.box .box_right {
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+}

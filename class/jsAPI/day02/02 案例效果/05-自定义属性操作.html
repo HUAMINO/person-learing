@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index="1" person="张三" class="nav"></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var div = document.querySelector('div');
+        var lis = document.querySelectorAll('ul li')
+        // console.log(lis);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i)
+        }
+
+    </script>
+</body>
+
+</html>

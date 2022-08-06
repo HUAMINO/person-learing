@@ -1,0 +1,244 @@
+body {
+    background-color: #f7f7f8;
+}
+
+.main {
+    /* 方案2:给主体内容区域 添加下边距 */
+    /* 下边距和pay一样高，把空间预留出来 */
+    padding: 12px 11px 80px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    height: 85px;
+    background-color: #fff;
+    padding-left: 11px;
+    border-radius: 5px;
+}
+
+.address_icon {
+    width: 30px;
+    height: 30px;
+    background-color: #54b196;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-right: 11px;
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+}
+
+.address_info {
+    flex: 1;
+    /* background-color: skyblue; */
+}
+
+.address_name {
+    display: flex;
+    align-items: center;
+}
+
+.address_name h3 {
+    width: 50px;
+    font-size: 15px;
+    color: #262626;
+    font-weight: 400;
+}
+
+.address_name p {
+    font-size: 13px;
+    color: #333333;
+}
+
+.address_text {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #333333;
+}
+
+/* --------------------------- */
+
+.goodsInfo {
+    padding: 0 11px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 9px;
+    height: 107px;
+    background-color: #fff;
+}
+
+.goods_pic {
+    width: 85px;
+    height: 85px;
+    margin-right: 12px;
+}
+
+.goods_pic img {
+    width: 85px;
+    height: 85px;
+}
+
+.goods_msg {
+    flex: 1;
+    /* background-color: #f70; */
+}
+
+.goods_number {
+    margin-left: 14px;
+    /* background-color: skyblue; */
+}
+
+.goods_msg {
+    display: flex;
+}
+
+.goods_Details {
+    flex: 1;
+    /* background-color: skyblue; */
+}
+
+.goods_title {
+    color: #262626;
+    font-size: 13px;
+}
+
+
+.select {
+    margin-top: 3px;
+}
+
+.select span {
+    background-color: #f7f7f8;
+    color: #888888;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.special_Price {
+    color: #cf4444;
+    margin-right: 14px;
+}
+
+.special_Price em {
+    font-size: 12px;
+}
+
+.special_Price span {
+    font-size: 16px;
+}
+
+.original_Price {
+    color: #999;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+/* ------------------------- */
+
+
+.form_Template {
+    overflow: hidden;
+    height: 125px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0 14px;
+}
+
+.mt6 {
+    margin-top: 6px;
+}
+
+.form_Template .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #262626;
+}
+
+.Remark {
+    justify-content: start !important;
+}
+
+.Remark .item_r {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #989898;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.cf4 {
+    color: #cf4444;
+}
+/* --------------- */
+
+
+.pay {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* 方案1: */
+/* 底部新增一个和pay高度一样的空容器,替他占据位置 */
+/* 不会遮挡主体内容 */
+.null {
+    height: 80px;
+}
+
+.pay_l {
+    display: flex;
+    align-items: center;
+}
+
+.pay_l_price {
+    margin-left: 12px;
+    color: #cf4444;
+}
+.pay_l_price i {
+    font-size: 12px;
+}
+.pay_l_price span {
+    font-size: 20px;
+    font-weight: 700;
+}
+.pay_l_price em {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.pay_r {
+    background-color: #54b196;
+    width: 90px;
+    height: 35px;
+    color: #fff;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 触摸事件对象
+        // 1. 获取元素
+        // 2. 手指触摸DOM元素事件
+        // 事件对象：当某个事件触发的时候，和这个事件相关的系列信息集合都放在这个event事件对象里面
+        var div = document.querySelector('div');
+
+        // 事件对象: 当某个事件触发的时候, 和这个事件相关的系列信息集合都放在这个event事件对象里面
+        // div.addEventListener('click', function(e){
+        //     // console.log(e.currentTarget)
+        //     console.log(e)
+        //     e.type // 事件类型
+        //     e.target // 触发事件的元素, 点击的谁, 指向的是谁
+        //     e.currentTarget  // 绑定事件的元素 === this
+        //     e.pageX  
+        //     e.pageY   // 相对于页面文档的坐标
+
+        //     e.keyCode  // 返回ASCII码值, 可以通过它判断键盘按了哪个键
+        //     e.key   
+        //     e.code 
+
+        //     e.preventDefault()  // 阻止默认行为
+        //     e.stopPropagation() // 阻止事件冒泡
+            
+        // })
+        // touchstart  touchmove touchend
+
+        
+// 1. touchstart 
+        div.addEventListener('touchstart', function(e){
+            //  1. e.touches    正在触摸屏幕的所有手指的列表信息(伪数组)
+            console.log(e);
+            console.log(e.touches)
+
+            // 2. e.targetTouches  正在触摸当前dom元素的手指列表信息
+            // 注意 e.targetTouches 也是一个伪数组
+            // 获取第一个手指的信息 索引
+            // 当我们触摸的是一个dom元素的时候, e.touches  和 e.targetTouches 是一样的
+            // console.log(e.targetTouches[0])
+
+            // 可以获取手指触摸dom元素时, 手指相对于页面文档的坐标
+            // console.log(e.targetTouches[0].pageX)
+            // console.log(e.targetTouches[0].pageY)
+
+            // 3. changedTouches 手指状态发生了改变时的手指列表信息
+            // 从无到有, 从有到无, 或者手指坐标信息改变的时候, 都会有e.changedTouches
+            // console.log(e.changedTouches)
+        })
+        // div.addEventListener('touchmove', function(e){
+        
+        //     // console.log(e)
+        // })
+        // div.addEventListener('touchend', function(e){
+        //     console.log(e) 
+        //     console.log(e.changedTouches) // 当手指离开dom元素的时候, 只有这个信息被记录下来
+        //     // e.touches 和 e.targetTouches 没有
+        // })
+
+    </script>
+</body>
+
+</html>

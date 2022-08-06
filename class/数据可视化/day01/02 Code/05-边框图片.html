@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框图片</title>
+    <style>
+        html{
+            font-size: 80px;
+        }
+        /* div {
+            width: 400px;
+            height: 300px;
+            border: 15px solid pink;
+            border-width: 60px;
+            border-image-source: url(./new-project/images/border.jpg);
+            border-image-slice: 167 167 167 167;
+            border-image-width: 20px;
+
+            border-image-repeat: repeat;
+        } */
+
+        .demo{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+
+        }
+        .panel {
+            position: relative;
+            border: 15px solid orange;
+            border-width: .6375rem .475rem .25rem 1.65rem;
+            border-image-source: url(./new-project/images/border.png);
+            border-image-slice: 51 38 20 132;
+        }.inner{
+            position: absolute;
+            top: -0.6375rem;
+            right: -0.475rem;
+            bottom: -.25rem;
+            left: -1.65rem;
+            padding: .3rem .45rem;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <div>边框图片</div> -->
+    <div class="demo panel">
+        <div class="inner">sddddddd</div>
+    </div>
+</body>
+
+</html>

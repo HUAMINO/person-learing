@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 复杂数据类型传参
+        // 构造函数
+        function Porson(name) { // 构造函数的参数，就是对象的属性
+            this.name = name
+        }
+
+        // 普通方法
+        function f1(x) { // x = p
+            console.log(x.name); // 2. 这个输出什么 ?     //roze
+            x.name = 'raye';
+            console.log(x.name); // 3. 这个输出什么 ?     //raye
+        }
+
+        var p = new Porson('roze');
+        console.log(p.name);    // 1. 这个输出什么 ?   //roze
+        console.log('------------------');
+        f1(p);
+        console.log('------------------');
+        console.log(p.name);    // 4. 这个输出什么 ?    //roye
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

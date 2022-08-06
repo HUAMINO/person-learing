@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box {
+    margin: 100px auto;
+    width: 600px;
+    height: 600px;
+    background-color: pink;
+    /* 给父容器变成弹性容器 */
+    display: flex;
+
+    /*  */    
+    /* justify-content: center; */
+    
+    /*space-between的作用是使得所有元素均匀分布，且各元素间距相同。  */
+    /* justify-content: space-between; */
+
+    /* 所有盒子均匀分布，空白间隙均分在两侧 */
+    /* justify-content: space-around; */
+
+    /* 弹性盒子沿主轴均匀排列, 弹性盒子与容器之间间距相等*/
+    justify-content: space-evenly;
+    
+
+
+  }
+
+  .box>div {
+    width: 100px;
+    height: 100px;
+  }
+
+  .box .one {
+    background-color: red;
+  }
+
+  .box .two {
+    background-color: yellowgreen;
+  }
+
+  .box .there {
+    background-color: grey;
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="there"></div>
+  </div>
+</body>
+</html>

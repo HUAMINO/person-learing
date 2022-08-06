@@ -1,0 +1,122 @@
+@import './base';
+@import './normalize';
+
+// 变量: 存储37.5
+@rootSize: 37.5rem;
+
+body {
+    background-color: #F0F0F0;
+}
+
+.nav {
+    position: fixed;
+    width: 10rem;
+    height: 1.7067rem;
+    background-color: aqua;
+
+    // padding-top: 1.7067rem;
+    top: 0;
+    left: 0;
+    /* 图片设置宽度和高度 */
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.container {
+    width: 10rem;
+    height: 4.2667rem;
+    margin-top: 1.7067rem;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* 乐园活动 */
+.title {
+    width: 10rem;
+    height: 1.0933rem;
+
+    h4 {
+        display: inline-block;
+        line-height: 1.0933rem;
+        margin-left: .4rem;
+        // color: red;
+    }
+
+    .pic {
+        width: 10rem;
+        height: 4.2667rem;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 3.6667rem;
+            height: 1.6rem;
+            background: url(../images/status_active.png) no-repeat;
+            
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+    }
+
+    .text {
+        width: 10rem;
+        // height: 2.1867rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: flex-start;
+
+        .desc {
+            font-size: .4rem;
+            padding-left: .4rem;
+            .title {
+                width: 7.8667rem;
+                margin-top: 0.4rem;
+            }
+
+            .ming {
+                padding: .2667rem;
+                padding-left: 0rem;
+            }
+        }
+
+        .btn {
+            margin-top: 0.4rem;
+            margin-left: 0.4rem;
+            span {
+                font-size: .4rem;
+                color: #FE6249;
+                // padding-right: .2667rem;
+            }
+        }
+    }
+
+}
+
+/* 底部开始 */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10rem;
+    height: 1.3067rem;
+    background-color:#FECA49 ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    .iconfont {
+        color: #fff;
+    }
+    
+}

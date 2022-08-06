@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // 1. $('div').each() 遍历元素  
+        // 让每一个div 字体颜色不同
+
+        var arr = ['red','purple','orange'];
+        // 隐式迭代 ：针对同一类元素 执行一样的方法
+        $('div').css('color','red');
+        var sum =0;
+        $('div').each( function (i, domEle) { 
+            console.log(i);
+            console.log(domEle);
+            $(domEle).css('color',arr[i]);
+            sum += parseInt($(domEle).html())
+             
+        });
+
+
+        // 2. $.each() 可遍历元素, 也可用于遍历数据,比如 数组，对象等。 
+        // 2.1 遍历元素
+        $.each($('div'), function (indexInArray, valueOfElement) { 
+             
+        });
+
+        // 2.2 遍历数组
+        var arr  = [1,2,3,4,5]
+        $.each(arr, function (indexInArray, valueOfElement) { 
+             console.log(indexInArray);
+        });
+
+        // 2.3遍历对象
+
+        var obj = {
+            name: 'zhou',
+            age: 15
+        }
+        $.each(obj, function (indexInArray, valueOfElement) { 
+            console.log(valueOfElement);
+             
+        });
+    </script>
+</body>
+
+</html>

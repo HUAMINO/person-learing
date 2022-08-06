@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取元素
+        var div = document.querySelector('div')
+        // touch 触摸
+
+        // touchstart手指触摸到一个dom元素的时候触发
+        div.addEventListener('touchstart',function(){
+            console.log('滴滴滴');
+
+        })
+
+        // 2.touchmove
+
+        div.addEventListener('touchmove',function(){
+            // 模拟手机按住手机屏幕：鼠标左键按钮
+            console.log('我移动了');
+
+        })
+
+        // 3.touchend：手指在dom元素上离开时候触发。按住离开后会触发
+        div.addEventListener('touchend',function(){
+            console.log('我离开了');
+
+        })
+        
+        
+    </script>
+</body>
+
+</html>

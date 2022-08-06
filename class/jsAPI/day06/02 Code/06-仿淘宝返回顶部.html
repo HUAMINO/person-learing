@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        
+        .main {
+            height: 2000px;
+            background-color: yellowgreen;
+        }
+        
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 页面被卷去 window.pageYOffset
+        var box = document.querySelector('.slider-bar')
+        var banner = document.querySelector('.banner')
+        // console.log(box)
+        var main = document.querySelector('.main')
+        var goBack = document.querySelector('.goBack')
+
+        // 我们右侧盒子固定定位的时候, fixed, 应该固定的top值
+        var boxTop = box.offsetTop - banner.offsetTop
+        // console.log(boxTop)
+        // 2. 页面监听滚动事件
+        document.addEventListener('scroll', function(){
+            // 当我们的页面被卷去的头部大于等于了 170 左右 , box改为固定定位
+            // 咱们 这个 170  banner.offsetTop
+            if (window.pageYOffset >= banner.offsetTop) {
+                box.style.position = 'fixed'
+                box.style.top = boxTop + 'px'
+            } else {
+                box.style.position = 'absolute'
+                // 回到原来的位置
+                box.style.top = '300px'
+            }
+
+            // 当我们的页面被卷去的头部大于 main盒子到顶部的距离, 显示goback
+            if (window.pageYOffset >= main.offsetTop) {
+                goBack.style.display = 'block'
+            } else {
+                goBack.style.display = 'none'
+            }
+        })
+        
+
+        goBack.addEventListener('click', function(){
+            // MDN
+            // https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo
+
+            // window.scroll(0,0)  // x, y 
+            // // window.scrollTo(0,0) 两个方法效果一样, 
+            // // 如果想平滑滚动,按着下面方式写, 传入一个对象 mdn可搜一下
+            // window.scroll({
+            //     top:0,
+            //     behavior:'smooth' // 平滑滚动  不兼容safari
+            // })
+            animate(window,0)
+        })
+        function animate(obj, target,callback) {
+                clearInterval(obj.timer)
+                obj.timer = setInterval(function(){
+                    var step = (target - window.pageYOffset) / 10
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                    /* 当到达指定的位置 */
+                    if (window.pageYOffset == target){
+                        /* 应为每次点击都会被调用,所以需要清楚定时器 */
+                        clearInterval(obj.timer);
+                        /* 判断这个函数是否存在如果不存在则不调用 */
+                        // 普通写法
+                        /* if(callback){
+                                callback(); 
+                        } */
+                        callback&&callback(); 
+                    }
+                       window.scroll(0,window.pageYOffset + step)
+                }, 15)
+
+}
+
+
+    </script>
+</body>
+
+</html>

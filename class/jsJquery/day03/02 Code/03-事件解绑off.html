@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("div").on({
+                click: function() {
+                    console.log("我点击了");
+                },
+                mouseover: function() {
+                    console.log('我鼠标经过了');
+                }
+            });
+
+            // 1.解绑所有事件
+            // btn.click = null;
+            // btn,removeEventListener('click',fn)
+            // $('div').off()
+        
+
+            // 2. 解绑点击事件
+
+            $('div').off('click');
+
+   
+
+            // 3. 事件委托的解绑
+            $('ul').on('click','li,p', function(){
+                console.log('昨天晚上睡得好吗？');
+            })
+
+                // 事件委托的解绑，绑定的是哪些元素，解绑也要一起写上，必须写得一模一样!
+                $('ul').off('click','li,p');//同时顺序也要一样
+
+
+            // 4. 如果同一个元素,同一个事件, 多个事件处理程序, 解除某个事件处理程序
+
+
+            var fn1 = function(){
+                console.log(1);
+            }
+            var fn2 = function(){
+                console.log(2);
+            }
+
+            $('.btn').on('click',fn1)
+            $('.btn').on('click',fn2)
+
+            $('.btn').off('click',fn1)
+
+
+            // 5. one() 只触发一次, 不用解绑 了解
+
+            $('p').one('click',function(){
+                console.log('我只触发一次');
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <p>我还没被解除哦</p>
+    </ul>
+    <p>我也是</p>
+    <button class="btn">点我</button>
+</body>
+</html>

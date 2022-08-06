@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width:200px"></div>
+    <script>
+        var box = document.querySelector('.box')
+        // 我们来回忆一下 , 设置样式类型有哪些方式?
+        //1.行内样式  2.内联样式 3.外联样式
+
+        //style.width 返回带单位的字符串 
+            //style.width 只能获取行内样式中的width
+            //style.width 获取到的width，不包含padding border
+            //可以读写，可以获取样式，也可以设置样式值（行内的）
+
+            // console.log(box.style.width);
+            box.style.width = "300px"
+            console.log(box.style.width);
+
+        
+
+        //offsetWith   返回的是number
+            // offsetWidth = width + padding + border
+            // offsetWidth 获取的是没有单位的数值 number
+            // offsetWidth 可以得到任意类型样式的值
+            // 只能是获取不能去修改
+
+            console.log();
+    </script>
+</body>
+
+</html>

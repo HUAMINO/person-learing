@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        // 
+        // var btn = document.querySelector('button')
+
+        // btn.addEventListener('click', function(){
+        //     // location.href 可以设置 URL , 也可以获取
+        //     location.href = 'http://www.baidu.com'
+        // })
+
+        // 5s之后,页面自动跳转到百度
+        // 定时器 setInterval
+
+        var btn = document.querySelector('button');
+        var div  = document.querySelector('div')
+        var count = 5;
+
+      btn.addEventListener('click', function(){
+            // location.href 可以设置 URL , 也可以获取
+         var timer =   function(){
+            if(count< 0){
+                location.href = 'http://www.baidu.com'
+            }else{
+                div.innerHTML = `您将在${count}秒之后跳转`
+                count--;
+            }
+      
+          }
+          timer();
+          setInterval(timer,1000)
+        })
+
+    </script>
+</body>
+
+</html>

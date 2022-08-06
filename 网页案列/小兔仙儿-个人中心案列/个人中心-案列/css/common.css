@@ -1,0 +1,374 @@
+/* 根据设计稿设置背景色 */
+body {
+    background-color: #f6f6f6;
+}
+
+* {
+    /* 全局改变为C3盒子模型 */
+    box-sizing: border-box;
+}
+
+/* 版心 */
+/* 必要属性1:宽度 */
+/* 必须属性2:水平居中 */
+/* 作用:确保绝大多数用户都可以看到页面的
+主体内容区域 */
+.w {
+    width: 1240px;
+    min-width: 1240px;
+    margin: 0 auto;
+}
+
+/* topnav 开始 */
+
+.top_Nav {
+    /* 因为默认没有写宽度 */
+    /* 宽度就是和浏览器一样宽 */
+    /* 但是在缩小浏览器的时候,容器也跟着缩小了 */
+    /* 但是容器里面的内容却还是有宽度 */
+    /* 所以 会在拖动滚动条的时候,看到部分异常现象 */
+    /* 解决:给大容器添加最小宽度 */
+    min-width: 1240px;
+    /* 现阶段不要求大家去实现这个效果 */
+    height: 52px;
+    background-color: #333;
+}
+
+
+/* 顶部导航模块样式 */
+.top_Nav ul li {
+    margin-top: 14px;
+    float: left;
+}
+
+.top_Nav ul li a {
+    color: #dcdcdc;
+    font-size: 14px;
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+
+
+
+/* 需要选择最后一个li里面的a取消右边框 */
+.top_Nav ul li:last-child a {
+    float: left;
+    border-right: none !important;
+    line-height: 26px;
+}
+
+/* 完成手机图标样式 */
+.top_Nav ul li:last-child a::before {
+    /* 浮动元素 默认顶端对齐 */
+    float: left;
+    content: '';
+    width: 13px;
+    height: 18px;
+    margin-right: 5px;
+    margin-top: 3px;
+    background: url(../images/sprites.png) no-repeat -159px -69px;
+}
+
+/* ------------topnav结束-------------*/
+
+.header {
+    /* min-width: 1240px; */
+    height: 150px;
+    background-color: #fff;
+}
+
+
+.logo {
+    /* 1.触发了塌陷(给父级添加oh可解决) */
+    /* 2.浮动元素(脱标)不会触发合并与塌陷 */
+    float: left;
+    margin-top: 30px;
+    width: 207px;
+    height: 70px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header ul {
+    margin-left: 40px;
+}
+
+.header ul li {
+    margin-top: 57px;
+    margin-right: 48px;
+    float: left;
+}
+
+.search_box {
+    margin-left: 38px;
+    margin-top: 50px;
+    height: 33px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.search_ipt {
+    float: left;
+    width: 130px;
+    height: 31px;
+}
+
+.search_box::before {
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;
+    margin-left: 2px;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    background-position: -79px -69px;
+    cursor: pointer;
+}
+
+.shopping_Cart {
+    position: relative;
+    margin-top: 52px;
+    margin-left: 15px;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    background-position: -119px -69px
+}
+
+.shopping_Cart_number {
+    position: absolute;
+    left: 15px;
+    top: -3px;
+    padding: 0 5px;
+    height: 15px;
+    background-color: #e26237;
+    font-size: 13px;
+    color: #fff;
+    line-height: 15px;
+    border-radius: 7px;
+}
+
+/* -------------头部区域 结束-------------- */
+
+
+
+
+/* -------  关于  ---------- */
+
+.about_box {
+    padding-top: 70px;
+    padding-left: 20px;
+    margin-top: 30px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.about_box ul li {
+    float: left;
+    width: 190px;
+    height: 145px;
+}
+
+.about_box ul li>p {
+    color: #999;
+    text-align: center;
+}
+
+.about_box ul li>div {
+    margin-top: 30px;
+    width: 93px;
+    height: 93px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.about_icon {
+    width: 30px;
+    height: 29px;
+    margin: 20px auto 10px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    background-position: -250px -70px;
+}
+
+
+.about_icon_text {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+
+.about_icon2 {
+    background-position: -350px -70px !important;
+}
+
+.about_icon3 {
+    width: 37px;
+    height: 30px;
+    background-position: -204px -14px !important;
+}
+
+.about_icon4 {
+    width: 37px;
+    height: 30px;
+    background-position: -349px -14px !important;
+}
+
+/* 右边距115px */
+.mr115 {
+    margin-right: 115px !important;
+}
+
+
+.download_app {
+    margin-left: 100px;
+    width: 226px;
+    height: 160px;
+    /* background-color: pink; */
+}
+
+.download_app>p {
+    text-align: center;
+    color: #999;
+}
+
+.download_app>div {
+    margin-top: 30px;
+    width: 105px;
+    height: 105px;
+    /* 辅助边框 */
+    /* border: 1px solid red; */
+}
+
+.erweima {
+    background-image: url(../images/erweima.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.download_btn {
+    padding-top: 10px;
+}
+
+.download_btn p {
+    font-size: 14px;
+    color: #999;
+}
+
+.download_btn a {
+    margin-top: 20px;
+    display: block;
+    width: 105px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #25ba9b;
+}
+
+
+.Service_Hotline {
+    margin-left: 35px;
+    width: 300px;
+    height: 200px;
+    border-left: 1px solid #f2f2f2;
+    text-align: center;
+    color: #999;
+}
+
+.Telephone {
+    font-size: 22px;
+    margin: 60px 0 10px;
+    color: #666 !important;
+}
+
+.time_Period {
+    font-size: 15px;
+    color: #999;
+}
+
+.period {
+    font-size: 15px;
+}
+
+
+footer {
+    height: 340px;
+    min-width: 1240px;
+    background-color: #333333;
+}
+
+.Product_Advantages {
+    padding-top: 50px;
+    height: 140px;
+    border-bottom: 2px solid #434343;
+    color: #fff;
+}
+
+.Product_Advantages ul li {
+    float: left;
+    width: 413px;
+    height: 90px;
+}
+
+.Advantages_icon {
+    float: left;
+    margin-left: 108px;
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.Advantages_icon_text {
+    margin-left: 15px;
+    margin-top: 13px;
+    float: left;
+    font-size: 26px;
+}
+
+.Advantages_icon2 {
+    background-position: -64px 0;
+}
+
+.Advantages_icon3 {
+    background-position: -130px 0;
+}
+
+
+
+.links ul {
+    margin: 40px auto 0;
+    width: 560px;
+    height: 30px;
+}
+
+.links ul li {
+    float: left;
+}
+
+.links ul li a {
+    font-size: 14px;
+    color: #999;
+    padding: 0 10px;
+    border-right: 1px solid #999;
+}
+
+.links ul li:last-child a {
+    border-right: none !important;
+}
+
+.links p {
+    margin-top: 5px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}

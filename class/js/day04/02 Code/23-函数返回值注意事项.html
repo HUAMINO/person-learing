@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 函数返回值注意事项
+
+        //1.return 终止函数执行
+        function add(num1, num2) {
+            return num1 + num2;
+            //函数中，return后面的语句不在执行，
+            console.log('1221')
+        }
+
+        var 热水 = add(11,22);
+        console.log(res);
+
+        //2.return 只能返回一个值 返回的结果是最后一个值
+        //不要这么写
+        function fn(num1,num2) {
+            return num1, num2;//逗号分隔得情况
+        }
+        console.log(fn(1,2));
+
+        //3.return 可以返回一个数组
+        //  写一个函数请两个数的加减乘除，以数组形式返回
+         function getResult(num1,num2) {
+            return [num1 + num2, num1 - num2, num1 * num2, num1 / num2 ]
+         }
+        
+         var res = getResult(1,5);
+         console.log(res);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

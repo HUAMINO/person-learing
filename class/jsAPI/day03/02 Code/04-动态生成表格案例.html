@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>移动</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 动态创建 -->
+        </tbody>
+    </table>
+    <script>
+
+        var datas = [{
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+
+        // 动态生成: 
+        // 我们根据后端返回来的数据，渲染生成。不是前端原本就写好在页面上的.
+        // 扩展 
+        //
+        // console.table(datas);
+
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // var td = document.createElement('tr');
+            for (k in datas[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+
+            // 移动元素
+            var Move = document.createElement('td');
+            Move.innerHTML = '<a href="javaScript:;" class = "shang">上移</a> <a href="javaScript:;" class="xia">下移</a> '
+            tr.appendChild(Move);
+
+            // 删除元素
+            var delTd = document.createElement('td');
+            delTd.innerHTML = '<a href="javaScript:;" class ="del">删除</a>';
+            tr.appendChild(delTd);
+        }
+
+        var as = document.querySelectorAll('tbody .del');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                console.log(this);
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+        // 获取 上移和下移的元素
+        var shang = document.querySelectorAll('tbody .shang');
+        var xia = document.querySelectorAll('tbody .xia');
+        // console.log(shang);
+        // console.log(xia);
+
+
+        var trs = document.querySelectorAll('tbody tr');
+   
+
+        for (var i = 0; i < shang.length; i++) {
+            shang[i].addEventListener('click', function(){
+            var _row = this.parentNode.parentNode;
+            //如果不是第一行，则与上一行交换顺序
+            var next_row = _row.previousElementSibling;
+            // while(_node && _node.nodeType != 1){
+            //     _node = _node.previousSibling;
+            // }
+            if(next_row){
+                swapNode(_row,next_row);
+            }else{
+                alert('已经是最上不能再点了')
+            }
+           });
+        }
+
+        
+        for (var i = 0; i < xia.length; i++) {
+            xia[i].addEventListener('click', function(){
+                var _row = this.parentNode.parentNode;//获取当前的tr
+                //如果不是最后一行，则与下一行交换顺序
+                var next_row = _row.nextElementSibling;//获取tr后面的兄弟元素节点
+
+                // 如果使用的是nextSibling则需要使用while循环来改变
+                // 一直判断是否是后面有文本节点，直到是元素节点是
+                // while(_node && _node.nodeType != 1){
+                //     _node = _node.nextSibling;
+                // }
+
+                if(next_row){
+                    swapNode(_row,next_row);
+                }else{
+                    alert('已经是最后的一个了不能在点了')
+                }
+            }
+           );
+        }
+
+        function swapNode(node1,node2){
+            //获取父结点
+            var _parent = node1.parentNode;
+            //获取两个结点的相对位置
+            var _t1 = node1.nextSibling;
+            var _t2 = node2.nextSibling;
+            //将node2插入到原来node1的位置
+            if(_t1)_parent.insertBefore(node2,_t1);
+            else _parent.appendChild(node2);
+            //将node1插入到原来node2的位置
+            if(_t2)_parent.insertBefore(node1,_t2);
+            else _parent.appendChild(node1);
+        }
+
+
+
+
+
+    </script>
+    <script src="./dynamicTable.js"></script>
+</body>
+
+</html>

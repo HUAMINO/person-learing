@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .current {
+            background-color: purple;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>好好学习 天天向上1</li>
+        <li>好好学习 天天向上2</li>
+        <li>好好学习 天天向上3</li>
+        <li>好好学习 天天向上4</li>
+        <li>好好学习 天天向上5</li>
+    </ul>
+    <ol>
+        <li>123123</li>
+        <li>123123</li>
+    </ol>
+    <script>
+        // 注册事件
+        var div = document.querySelector('div')
+        div.onclick = function(){
+            div.style.background = 'skyblue'
+        }
+        // 原来使用onclick,注册事件,
+        // 对同一个元素注册相同事件, 后一个会覆盖前一个
+        // div.onclick = function(){
+        //     div.style.background = 'purple'
+        // }
+
+        // // jquery 绑定事件，后一个并没有覆盖前一个
+        // $('div').click(function(){
+        //     console.log(1);
+        //     $('div').css('background','skyblue')
+        // })
+
+        // $('div').click(function(){
+        //     console.log(2);
+        //     setTimeout(function(){
+        //         $('div').css('background','skyblue');
+        //         console.log(this);
+        //     },2000)
+        // })
+
+
+        // 2. 事件绑定 on()
+       // (1) on 可以同时绑定1个或者多个事件 , 传对象
+
+       // 如果处理程序相同, 我们可以把事件合并写在一起, 中间空格隔开
+
+    //    $('div').on({
+    //         mouseover: function(){
+    //             $(this).css('background','skyblue')
+    //         },
+    //         click:function(){
+    //             $(this).css('background','purple')
+    //         },
+    //         mouseout:function(){
+    //             $(this).css('background','orange')
+    //         }
+    //    })
+
+    //  如果处理程序相同，我们可以把事件合并写到一起，中间空格隔开
+    // $('div').on('mouseover mouseout',function(){
+    //     $(this).toggleClass('current')
+    // })
+
+
+
+       
+       // (2) on可以实现事件委托 // 相当于addEventListener
+       // 隐式迭代: 给每一个li绑定点击事件
+    //    $('ul li').click(function(){
+    //        console.log(123);
+    //    })
+
+        // 给ul 绑定事件，触发的元素是li
+        $('ul').on('click','li',function(){
+            console.log($(this).html());
+        })    
+
+        // 如果不指定触发的对象，$(this)指向的是绑定事件的元素
+        $('ol').on('click',function(){
+            console.log($(this));
+        })
+
+
+
+       // (3) 用on:  可以给动态创建的元素也拥有注册的事件
+       var $li = $('<li>新创建的li<li/>')
+
+       $('ol').append($li)
+
+
+
+
+
+ 
+    </script>
+</body>
+
+</html>

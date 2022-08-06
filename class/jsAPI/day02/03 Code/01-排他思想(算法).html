@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+    </div>
+    <script>
+        // 排他思想: 
+        // 如果有相同一组元素，我们想给某一个元素设置某种样式，可以用到排他思想
+        // 排他思想: 干掉所有人 留下我自己
+        // var btn = document.querySelectorAll('button')
+
+        // // 循环遍历绑定事件
+        // for (var i = 0; i < btn.length; i++) {
+
+        //     // btn[i].onclick 表示先给每一个按钮绑定事件 此时的i等于5
+        //     btn[i].onclick = function () {
+        //         // 1.先清空所有样式
+        //         for (var i = 0; i < btn.length; i++) {
+        //              btn[i].style.backgroundColor = ''
+        //         }
+        //         // 2.留下自己
+        //         this.style.backgroundColor = 'skyblue'
+        //     }
+
+        // }
+
+        var div  = document.querySelector('div');
+        div.addEventListener('click',function(e) {
+            console.log(e);
+            // e.target.style.backgroundColur = 'pink';
+            // for(var i = 0; i < div.children.length - 1; i++){
+            //     // console.log(div.children[i]);
+            //      div.children[i].style.backgroundColor = '';
+            // }
+
+            // //留下我们自己的时候事件委托，this ==>e.target
+            //  e.target.style.backgroundColor = 'pink';
+
+        })
+
+
+    </script>
+</body>
+
+</html>

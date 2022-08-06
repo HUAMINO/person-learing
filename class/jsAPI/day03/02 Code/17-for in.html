@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for in  遍历对象的属性 , 不推荐和数组一起使用!
+        // mdn 
+        var obj = {
+            name:'张三',
+            age:18,
+            sex:'male',
+            hobby:'学习',
+        }
+        // key : 键      value : 值
+        // key, value 也叫做键值对.
+        // 对象里面的属性名 也叫做键 , 
+        // 属性值, 也叫值, value
+        for (var k in obj) {
+            // console.log(k)
+            console.log(obj[k])
+            // console.log(obj['name'])
+            // console.log(obj['age'])
+            // console.log(obj['sex'])
+            // console.log(obj['hobby'])
+            // 这里的 k 是个变量, 表示每一个属性名 
+           
+        }
+        // 对象里取存在的属性
+        // obj.属性名
+        // obj.['属性名']
+        
+        // 为什么obj.k undefined ?
+        console.log(obj.name) 
+        // 如果这么取, k是对象里存在的属性才可以
+        console.log(obj.k)  // undefined
+
+    </script>
+</body>
+</html>

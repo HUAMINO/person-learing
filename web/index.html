@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小兔仙儿</title>
+
+  <meta name="keywords" content="家用电器，手机，电饭锅">
+  <meta name="description" content="">
+  <link rel="icon" href="./favicon.ico">
+
+  <link rel="stylesheet"  href="./css/index.css">
+  <link rel="stylesheet"  href="./css/base.css">
+ 
+
+<script>
+
+  function createPerson(name,age,gender) {
+    var obj = new Object();
+    obj.name = name;
+    obj.age = age;
+    obj.gender = gender;
+    return obj;
+  }
+
+  var obj1 = createPerson("ddd",25,"ddd");
+  console.log(obj1);
+</script>
+
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <div class="topNav">
+    <!-- 版心 -->
+    <div class="w">
+      <ul>
+        <li><a href="#">前先登录</a></li>
+        <li class="line"></li>
+        <li><a href="#">免费注册</a></li>
+        <li class="line"></li>
+        <li><a href="#">我的订单</a></li>
+        <li class="line"></li>
+        <li><a href="#">会员中心</a></li>
+        <li class="line"></li>
+        <li><a href="#">帮助中心</a></li>
+        <li class="line"></li>
+        <li><a href="#">在线客服</a></li>
+        <li class="line"></li>
+        <li><a href="#">手机版</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <!-- 主题导航布局 -->
+  <div class="main_nav">
+    <!-- 版心 -->
+    <div class="w">
+      <!-- 左侧logo -->
+      <div class="logo">
+        <a href="">
+          <img src="./images/logo.png" alt="">
+        </a>
+      </div>
+
+      <!-- 中间列表 -->
+      <div class="middel_list">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">生鲜</a></li>
+          <li><a href="#">美食</a></li>
+          <li><a href="#">电器</a></li>
+          <li><a href="#">居家</a></li>
+          <li><a href="#">洗护</a></li>
+          <li><a href="#">孕婴</a></li>
+          <li><a href="#">服装</a></li>
+          <li><a href="#">餐厨</a></li>
+        </ul>
+      </div>
+
+      <!-- 右侧搜索区域 -->
+      <div class="searchBox">
+        <input type="text" value="搜一搜">
+        <!-- 显示放大镜的 -->
+        <span></span>
+        <!-- 显示购物车精灵图 -->
+        <span></span>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

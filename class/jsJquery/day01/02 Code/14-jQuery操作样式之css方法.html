@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        // 操作样式之css方法
+        // 入口函数
+        // $(document).ready(function(){
+            
+        // })
+        $(function() {
+            // 1. $().css() 
+            // 参数如果只写属性名， 表示获取属性值
+            console.log($('div').css('width'));  //200px
+            console.log($('div').css('backgroundColor'));
+
+
+            // 2. $('div').css('属性名', '属性值')
+            // 参数 是 属性名，属性值，以逗号隔开， 表示 设置属性
+
+            $('div').css('width','200px');//ok
+            $('div').css('width','400px');//ok
+            // $('div').css(height,300);//error
+
+
+            // 3. 参数是对象的形式
+            // css()参数为对象形式时，属性名可以带引号，也可以不带
+            
+            $('div').css({
+                width:200,
+                'height': 200,
+                'backfround':'purple'
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 操作样式之css方法 $().css()
+  
+    </script>
+</body>
+
+</html>

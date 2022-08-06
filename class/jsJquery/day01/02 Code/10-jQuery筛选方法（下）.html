@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <p>123123</p>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+    <div class="current">俺有current</div>
+    <div>俺木有current</div>
+    <script>
+
+        // 筛选方法 下
+        // 1. siblings() 获取除自身以外的所有亲兄弟
+        console.log($('ol .item').siblings());
+        $('ol .item').siblings('li').css('color', 'red');
+
+        // 2. 选取索引号为index的元素  eq()
+        var  index = 2;
+        $('ul li ').eq(index).css('color','green')
+
+        // 3. hasClass 判断是否存在某个类名  返回值是boolean
+            console.log($('div:first').hasClass('current'));
+            console.log($('div:last').hasClass('current'));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var num1 = 0;
+    var num2 = 0;
+    var quit = 1;
+    var result = 0;
+    while (quit == 1) {
+      var msg = prompt('请输入您要进行的操作:' + '\n'
+        + '1.加法' + '\n'
+        + '2.除法' + '\n'
+        + '3.乘' + '\n'
+        + '4.除' + '\n'
+        + '5.退出'
+      );
+      var now = parseInt(msg);
+      if (now == 1) {
+        var num1 = parseInt(prompt("请输入第一个数"));
+        var num2 = parseInt(prompt("请输入第二个数"));
+
+        function Sum(a, b) {
+           result = a + b;
+          return result;
+        }
+        Sum(num1, num2);
+
+        alert("结果为" + result);
+        quit = 1;
+
+      } else if (now == 2) {
+        var num1 = parseInt(prompt("请输入第一个数"));
+        var num2 = parseInt(prompt("请输入第二个数"));
+        
+        function Muit(a, b) {
+          result = a - b;
+          return result;
+        }
+        Muit(num1, num2);
+        alert("结果为" + result);
+        quit = 1;
+
+      } else if (now == 3) {
+        var num1 = parseInt(prompt("请输入第一个数"));
+        var num2 = parseInt(prompt("请输入第二个数"));
+        function Chen(a, b) {
+          result = a * b;
+          return result;
+        }
+        Chen(num1, num2);
+        alert("结果为" + result);
+
+        quit = 1;
+
+      } else if (now ==4) {
+        var num1 = parseInt(prompt("请输入第一个数"));
+        var num2 = parseInt(prompt("请输入第二个数"));
+        function Chu(a, b) {
+          result = a / b;
+          return result;
+        }
+        Chu(num1, num2);
+        alert("结果为" + result);
+        quit = 1;
+      }
+      else {
+        quit = 0;
+
+      }
+
+    }
+
+    alert("您已成功退出");
+
+  </script>
+</body>
+
+</html>

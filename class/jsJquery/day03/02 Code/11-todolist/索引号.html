@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+    </div>
+    <ul>
+        <li><a href="#">a</a></li>
+        <li><a href="#">b</a></li>
+        <li><a href="#">c</a></li>
+    </ul>
+    <script>
+        // 给a绑定的点击事件 this指向a
+        // 每个a标签是兄弟元素  index()
+        $('div a').on('click', function(){
+            // 0 1 2
+            console.log($(this).index())
+        })
+
+        
+        // li标签中的a 只有一个 ， index() 
+        // 每次获取的时候index()都是0
+        $('ul a').on('click', function(){
+            console.log($(this).index())
+        })
+    </script>
+</body>
+
+</html>

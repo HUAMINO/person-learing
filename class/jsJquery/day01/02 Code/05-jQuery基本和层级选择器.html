@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1. 引入jquery -->
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="top">我是div</div>
+    <div class="nav">我是nav div</div>
+    <div>
+        <span class="current"></span>
+    </div>
+    <p>我是p</p>
+    <ol>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+    </ol>
+    <ul class="ul">
+        <li>我是ul 的</li>
+        <li class="current">我是ul 的</li>
+        <li class="current">我是ul 的</li>
+        <li>我是ul 的</li>
+        <ul>
+            <li>111</li>
+            <li>222</li>
+        </ul>
+    </ul>
+    <script>
+        $(function(){
+            // 一，基础选择器
+            // $('')  里面直接写css选择器，注意加引号
+            // 1. id选择器
+            console.log($('#top'));
+            // 2. 类选择
+            console.log($('.current'));
+
+            // 3. 标签选择器
+            console.log($('div'));
+
+            // 4. 并集选择器  注意， 一对引号， 里面每一个逗号隔开
+            // 选中匹配的所有元素
+            console.log($('div'));
+
+            // 5.交集选择器
+            console.log($('li.current'));
+
+
+            // 6.全选选择器
+            console.log($('*'));
+
+
+            // 二，层级选择器 常用的有两种
+            // 后代选择器  ul下所有的li标签, 包括子孙
+            console.log($('ul li'))
+
+            // 子代选择器  ul下第一层li 亲儿子
+            console.log($('.ul>li'))
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

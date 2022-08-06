@@ -1,0 +1,227 @@
+/* 头部和底部样式代码已抽离到common.css中 */
+/* 在index.css中开始书写 个人中心 样式代码 */
+
+.main {
+  margin-top: 30px;
+   /* height: 3000px; */
+   height: 1344px;
+  /* background-color: antiquewhite; */
+}
+
+.main .main_left {
+  width: 224px;
+  float: left;
+  background-color: white;
+  margin-right: 20px;
+  
+}
+
+.main .main_left ul li {
+  margin: 14px 0px 14px  54px;
+  
+}
+
+.main .main_left ul li a span{
+  visibility: hidden;
+}
+
+.main .main_left ul li a:hover {
+  color: #6fbfa6;
+
+}
+
+.main .main_left ul li a:hover span{
+  visibility: visible;
+
+}
+
+
+
+
+.main .main_right {
+  width: 996px;
+  float: left;
+  height: 500px;
+
+}
+
+.main .main_right .top {
+  height: 132px;
+  position: relative;
+  background: url(../images/bgi.png) no-repeat;
+}
+
+.main .main_right .top .top_left {
+  width: 50%;
+  float: left;
+}
+
+.main .main_right .top .top_left img{
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 52px;
+
+  /* position: absolute;
+  top: 50%;
+  left: 59px;
+  transform: translateY(-50%); */
+}
+
+.main .main_right .top .top_left p {
+  display: inline-block;
+  line-height: 132px;
+  margin-left: 20px;
+}
+
+
+
+.main .main_right .top .top_right {
+  width: 50%;
+  float: right;
+
+}
+
+.main .main_right .top .top_right ul li {
+  float: left;
+  margin-top: 36px;
+  margin-right: 100px;
+}
+
+.main .main_right .top .top_right ul li img {
+  display: block;
+  margin-left: 13px;
+
+}
+
+.main .main_right .top .top_right ul li a {
+  margin-top: 20px;
+  display: block;
+}
+
+/* 第二个页面 我的订单 和查看全部 */
+
+.main .main_right .buttom {
+  margin-top: 20px;
+  background-color: white;
+}
+
+.main .main_right .buttom .buttom_top {
+  margin: 20px 0px;
+
+}
+
+.main .main_right .buttom .buttom_top h4 {
+  float: left;
+  margin-left: 14px;
+
+}
+.main .main_right .buttom .buttom_top p{
+  float: right;
+  margin-right: 14px;
+
+}
+
+.main .main_right .buttom .buttom_top p span {
+  padding-left: 4px;
+}
+
+
+.main .main_right .buttom .buttom_buttom ul li {
+  float: left;
+  margin-bottom: 22px;
+}
+
+.main .main_right .buttom .buttom_buttom ul li img,
+.main .main_right .buttom .buttom_buttom ul li .middle,
+.main .main_right .buttom .buttom_buttom ul li span{
+  float: left;
+}
+
+.main .main_right .buttom .buttom_buttom ul .one {
+  width: 592px;
+  height: 136px;
+  margin-left: 14px;
+  border: 1px solid black;
+}
+.main .main_right .buttom .buttom_buttom ul li .middle {
+  margin-top: 48px;
+}
+
+.main .main_right .buttom .buttom_buttom ul li img{
+  width: 134px;
+  height: 134px;
+}
+
+.main .main_right .buttom .buttom_buttom ul li .special {
+  margin: 62px 0px 0px 100px;
+  color: red;
+  
+}
+
+.main .main_right .buttom .buttom_buttom ul .two {
+  width: 198px;
+  height: 136px;
+  padding-top: 38px;
+  text-align: center;
+  border: 1px solid black;
+  border-left: none;
+}
+
+.main .main_right .buttom .buttom_buttom ul li p{
+  color: #7a7a7a;
+}
+
+.main .main_right .buttom .buttom_buttom ul .three {
+  width: 180px;
+  height: 136px;
+  text-align: center;
+  padding-top: 38px;
+  border: 1px solid black;
+  border-left: none ;
+}
+
+.main .main_right .buttom .buttom_buttom ul .three input {
+  border: 1px solid #27ba9b;
+  width: 100px;
+  height: 32px;
+  background-color: #27ba9b;
+  border-style: none;
+  outline-style: none;
+}
+
+/* collect第三部分 */
+.collect {
+  width: 996px;
+  height: 408px;
+  background-color: white;
+}
+
+.collect .collect_top h4 {
+  padding: 14px 14px;
+}
+
+.collect .collect_main ul {
+  margin-left: 14px;
+}
+
+.collect .collect_main ul li {
+  float: left;
+  margin: 0 60px 14px 0px;
+
+}
+
+.collect .collect_main ul li p {
+  line-height: 30px;
+}
+
+.collect .collect_main ul li .special {
+  padding-left: 4px;
+
+}
+
+.collect .collect_main ul li span {
+  color: red;
+  font-weight: 700;
+}

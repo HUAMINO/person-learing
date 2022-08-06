@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user_name" placeholder="user_name" class="user_name">
+    <input type="text" name="age" class="age" placeholder="age">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">清空所有数据</button>
+    <script>
+
+        // sessionStorage 
+        // 获取元素
+        var inputName = document.querySelector('.user_name');
+        var inputAge = document.querySelector('.age');
+        // 获取四个按钮
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var clear = document.querySelector('.clear');
+
+        // 存储数据   sessionStorage.setItem(key,value)
+        set.addEventListener('click',function(){
+            sessionStorage.setItem('user',inputName.value);
+            sessionStorage.setItem('age',inputAge.value);
+        })
+
+        // 获取数据  sessionStorage.getItem(key)  又返回值
+        get.addEventListener('click',function(){
+            var res = sessionStorage.getItem('age');
+            console.log(res);
+            console.log(sessionStorage.getItem('user'));
+        })
+        // 删除某个数据  sessionStorage.removeItem(key) 
+        remove.addEventListener('click',function(){
+            sessionStorage.removeItem('age');
+            
+        })
+
+        // 清空数据   sessionStorage.clear()
+
+        clear.addEventListener('click',function(){
+            sessionStorage.clear();
+        })
+
+        // sessionStorage的考点；
+        // 1.生命周期 ：是关闭当前窗口结束  (也就是关闭了窗口Tab，数据消失)
+        // 2.数据共享 : 同一个窗口(tab,页面)  下 数据是可以共享的。
+        // 3.存储大小 : sessionStorage  存储大小 5m  localStrorage 存储大小也是5m
+       
+        // 4. 设置 : sessionStorage.setItem(key,value);
+        //    获取 : sessionStorage.getItem(key)
+        //    删除 : sessionStorage.removeItem(key);
+        //    清空 : sessionStorage.clear();
+
+        // sessionStorage / localStorage : 刷新页面, 数据还是存在浏览器里面的
+        
+
+    </script>
+
+</body>
+
+
+</html>

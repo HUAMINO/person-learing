@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        body{
+            height: 2000px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容 
+        我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容
+    </div>
+    <script>
+        // scroll 
+        var div = document.querySelector('div')
+
+        // scrollHeight 返回元素内容自身的实际高度, 包含内容超出盒子未显示部分的高度
+        /* 不包含边框 */
+
+        // clientHeight 也不包含边框
+        console.log(div.scrollHeight);
+
+        // offsetHeight  包含border
+
+
+        //scrollTop返回元素被卷去的头部   不能用来监听页面的
+        //滚动事件的监听
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop);
+        })
+
+        // 页面被卷去的头部 window.pageYOffset(专有的记住)
+    </script>
+</body>
+
+</html>

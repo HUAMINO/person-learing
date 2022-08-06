@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  var arr = [12, 66, 4, 88, 3, 7];
+  var newArr = arr.filter(function(index, value,array) {
+
+    console.log(array);
+   console.log(index,value);
+  });
+  console.log(newArr);//[66,88] //返回值是一个新数组
+  console.log(arr);
+</script>
+</html>

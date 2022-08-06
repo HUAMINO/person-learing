@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user_name" placeholder="user_name" class="user_name">
+    <input type="text" name="age" class="age" placeholder="age">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">清空所有数据</button>
+    <script>
+        // 获取元素
+        var inputName = document.querySelector('.user_name')
+        var inputAge = document.querySelector('.age')
+        // 获取四个按钮
+        var set = document.querySelector('.set')
+        var get = document.querySelector('.get')
+        var remove = document.querySelector('.remove')
+        var clear = document.querySelector('.clear')
+
+
+            // 存储数据   localStorage.setItem(key,value)
+            set.addEventListener('click',function(){
+            localStorage.setItem('user',inputName.value);
+            localStorage.setItem('age',inputAge.value);
+        })
+
+        // 获取数据  localStorage.getItem(key)  又返回值
+        get.addEventListener('click',function(){
+            var res = localStorage.getItem('age');
+            console.log(res);
+            console.log(localStorage.getItem('user'));
+        })
+        // 删除某个数据  localStorage.removeItem(key) 
+        remove.addEventListener('click',function(){
+            localStorage.removeItem('age');
+            
+        })
+
+        // 清空数据   localStorage.clear()
+
+        clear.addEventListener('click',function(){
+            localStorage.clear();
+        })
+
+        
+    // localStorage的考点 
+    //     1. 生命周期  :  永久生效, 除非手动删除, 否则关闭浏览器也会存在
+    //     2. 数据共享  :  可以多窗口(页面)共享 (同一个浏览器可以共享)
+
+    //     3. 存储大小  : sessionStorage 存储大小 5M  localStorage 存储大小也是5M
+
+    //     4. 设置 : localStorage.setItem(key, value)
+    //        获取 : localStorage.getItem(key)
+    //        删除 : localStorage.removeItem(key) 
+    //        清空 : localStorage.clear()
+
+    //     sessionStorage / localStorage : 刷新页面, 数据还是存在浏览器里面的
+        
+
+        // 扩展.
+            // 实际开发, 咱们存储的 一般是对象或者数组形式(字符串)的数据 ===> JSON格式的字符串
+            // 注意, localStorage/ sessionStorage  存储的是字符串
+            
+            // JSON格式的字符串
+
+            // JSON格式 : key value 是双引号引起来的这种格式   (number/ bool / null)
+            // { "age":30 }
+            // { "name":"菜鸟教程" , "url":"www.runoob.com" }
+
+            // {
+            // "sites": [
+            //     { "name":"菜鸟教程" , "url":"www.runoob.com" }, 
+            //     { "name":"google" , "url":"www.google.com" }, 
+            //     { "name":"微博" , "url":"www.weibo.com" }
+            //     ]
+            // }
+            // { "flag":true }
+            // { "runoob":null }
+
+            var obj = {
+                name :'小亮',
+                age : 18
+            }
+
+            // localStorage.setItem('demo', obj)
+            // console.log(localStorage.getItem('demo'))
+
+            // JSON的两个方法
+            // JSON.stringify()  将对象转换成JSON格式的字符串
+            // JSON.parse()  将JSON格式的字符串转换为对象形式
+
+            localStorage.setItem('demo', JSON.stringify(obj))
+            var res = localStorage.getItem('demo')
+            var obj = JSON.parse(res)
+            console.log(obj.age)
+
+            var arr = [{name:'xxx', age: 18},{name:'yyy', age:19}]
+
+            localStorage.setItem('demo2', JSON.stringify(arr))
+
+            var res2 = localStorage.getItem('demo2')
+            var arr2 = JSON.parse(res2)
+            console.log(arr2[0].age)
+            console.log(arr2[1])
+
+            // 1. localStorage / sessionStorage  key value   , value 是一个字符串.
+            // 当我们想要把 对象, 或者数组 这样复杂的数据存到本地里面, 就不行了 , 需要转换
+            // 转换 : 
+
+            // JSON.stringify() 
+            // JSON.parse()
+            
+
+    </script>
+</body>
+
+
+</html>

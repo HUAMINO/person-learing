@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info-box .hero-box{width:732px;padding:8px 20px 0;color:#a6afbc;}
+        .info-box .hero-list{margin-top:8px;}
+        .info-box .hero-list li{
+            float:left;display:inline;
+            position:relative;
+            margin-right:10px;
+            width:69px;
+            transition:0.4s ease-in-out;
+            overflow: hidden;}
+        .info-box .hero-list a{
+            display:block;
+            position:relative;
+            width: 69px;
+            height: 69px;
+        }
+        .info-box .hero-list img{
+            border-radius:5px;
+            transition:0.4s ease-in-out;
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .info-box .hero-list li.active{width: 224px;}
+        .info-box .hero-list li.active a{width: 224px;}
+        .info-box .hero-list li.active .small{opacity: 0;}
+        .info-box .hero-list li.active .large{opacity: 1;}
+        .info-box .hero-list li .large{opacity: 0;}
+
+    </style>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            $('.hero-list li').mouseover(function(){
+                
+                $(this).addClass("active")
+                .siblings("li").removeClass("active");
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <div class="info-box">
+        <ul class="hero-list">
+            <li class="active">
+                <a href="#">
+                    <img src="images/m1.jpg" alt="" class="small">
+                    <img src="images/m.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/l1.jpg" alt="" class="small">
+                    <img src="images/l.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/c1.jpg" alt="" class="small">
+                    <img src="images/c.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/w1.jpg" alt="" class="small">
+                    <img src="images/w.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/z1.jpg" alt="" class="small">
+                    <img src="images/z.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/h1.jpg" alt="" class="small">
+                    <img src="images/h.png" alt="" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/t1.jpg" alt="" class="small">
+                    <img src="images/t.png" alt="" class="large">
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>惊喜不，意外不</div>
+    <div>惊喜不，意外不</div>
+    <div>惊喜不，意外不</div>
+    <div>惊喜不，意外不</div>
+    <ul>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+    </ul>
+    <script>
+        // 1. 获取元素
+        var divs = document.querySelectorAll('div');
+
+
+        // 2. 给每一个div加一个背景色
+        // for (var i = 0; i < divs.length; i++) {
+        //     divs[i].style.backgroundColor = 'pink'
+        // }
+
+        // jQuery的方式 改变背景色
+        // $().css('属性',"值")//改变样式
+        // $('div').css("backgroundColor",skyblue);
+        $('div').css('background-color','skyblue');
+
+        // 隐式迭代：自动帮我们做了循环
+        // jQuery遍历内部DOM元素的过程 就叫隐式迭代
+
+        // 理解：jquery给我们匹配的每一个dom元素内部进行遍历，执行相应的方法，操作更方便，快捷。
+
+        $('ul li').css('color','orange');
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        ul {
+            list-style: none
+        }
+        
+        .box {
+            width: 600px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        
+        textarea {
+            width: 450px;
+            height: 160px;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            width: 450px;
+            padding-left: 80px;
+        }
+        
+        ul li {
+            line-height: 25px;
+            display: block;
+            height: 25px;
+            border-bottom: 1px dashed #cccccc;
+            display: none;
+        }
+        
+        input {
+            float: right;
+        }
+        
+        ul li a {
+            float: right;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function() {
+            // 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul中,从前面添加
+            
+          
+            $('.btn').on('click',function(){
+                if(!$('.txt').val()) return
+                var $li = $('<li></li>');
+                $li.html($('.txt').val() + '<a href = "javascript:;">删除</a>')
+                // 添加到ul中, 从前面添加
+                $('ul').prepend($li);
+
+                $li.slideDown();
+                // 清空textarea内容
+                $('.txt').val('');
+            })
+
+            // 2. 点击删除按钮, 删除当前的li标签
+            $('ul').on('click','a', function () {
+                $(this).parent().slideUp(function(){
+
+                    // slideUp里面 $(this)指向的是 li
+                    // console.log(this);
+                    // 移除li标签元素本身
+                    $(this).remove();
+
+                })
+                
+            });
+
+            // 3.键盘事件  ，回车发布， ctrl + 回车  换行 cmd + 回车
+
+            $('.txt').on('keydown',function(e){
+                console.log(111);
+                // 阻止回车默认换行行为
+                if(e.keyCode == 13){
+                    e.preventDefault()
+                }
+
+                // 2.按住ctrl键或者meta(cmd)键 在按回车，换行，不执行点击发布
+
+                console.log(e);
+
+                if((e.ctrlKey || e.metaKey) && e.keyCode === 13){
+                    $('.txt').val($('.txt').val() + '\n')
+                }
+                
+
+                // 3.如果单独按回车，但是内容为空，弹出输入内容
+                if(e.keyCode === 13 && !$('.txt').val()){
+                    alert('请输入内容');
+                    return
+                }else if(e.keyCode === 13 && $('.txt').val() && !(e.ctrlKey || e.metaKey)){
+                    $('.btn').click();
+
+                }
+             
+            })
+
+
+
+
+            
+        }) // end 入口函数
+    </script>
+</head>
+
+<body>
+    <div class="box" id="weibo">
+        <span>微博发布</span>
+        <textarea name="" class="txt" cols="30" rows="10"></textarea>
+        <button class="btn">发布</button>
+        <ul>
+        </ul>
+    </div>
+</body>
+
+</html>

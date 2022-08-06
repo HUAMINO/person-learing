@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="grand-father">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是p1</p>
+        <div>
+            <p>我是p2</p>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            // 筛选方法 ，需要加括号
+            // 父级
+            // var son = document.querySelector('.son')
+            // console.log(son.parentNode)
+
+
+            // 获取最近的以及元素 注意是方法，需要加括号！
+            $('son').parent();
+            console.log($('.son').parent().parent());
+
+            // 子元素
+            // 1.children() 想当于子代选择器  ul > li 获取的是亲儿子
+            console.log($('.nav').children())
+            console.log($('.nav').children('p'));    
+            $('.nav').children('p').css('color','pink')        
+
+
+            // // 2.find() 相当于后代选择器 ul li  可以获取里面的所有孩子(包括子孙) 
+            // $('.nav').find('p').css('color','red');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <!-- <input type="text" placeholder="手机"> -->
+    <script>
+        var input = document.querySelector('input')
+        input.onfocus = function() {
+            if (input.value  === '手机') {
+                input.value = '';
+            }
+            console.log(this);
+            this.style.color = '#ccc'
+        }
+        
+        input.onblur = function(){
+            // 
+            if (input.value === ''){
+                // 设置input表单的属性值
+                input.value = '手机'
+            }
+            this.style.color = '#999'
+        }
+        
+    </script>
+
+</body>
+
+</html>

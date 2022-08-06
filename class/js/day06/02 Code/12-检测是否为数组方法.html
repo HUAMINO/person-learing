@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 翻转数组
+        function reverse(arr) {
+            if(Array.isArray(arr)){
+                var newArr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+
+            }
+            return newArr;
+            }else {
+                alert('错误')
+            }
+        
+        }
+
+        /* instanceof  */
+
+        // a instanceof b 
+        // var arr = [22,1,m]
+        console.log(reverse([1, 2, 3]));
+        console.log(reverse(1, 2, 3));
+
+        //基本数据类型 ： Nubmber  string undefined boolean bigInt symbol null
+        //typeof  
+        //prefect   Object.prototype.tostring().call()   
+        __proto__
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

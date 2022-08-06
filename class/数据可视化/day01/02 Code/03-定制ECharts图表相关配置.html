@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定制ECharts图表相关配置</title>
+    <style>
+        .box {
+            width: 850px;
+            height: 550px;
+            margin: 50px auto;
+        }
+    </style>
+    <script src="js/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var myChart = echarts.init(document.querySelector('.box'));
+        var option = {
+            // 官网文档 --> 配置项手册 --> 找到相应配置
+            // 1. 颜色 数组
+            color: ['pink', 'blue', 'green', 'skyblue', 'red'],
+            // 2. 标题
+            title: {
+                text: '我的折线图123'
+            },
+            // 3. 提示框组件
+            tooltip: {
+                show:true,
+                trigger: 'axis'
+            },
+            // 4. 图例组件
+            legend: {
+                data: ['ddd', '联盟广告', '视频广告', '直接访问']
+            },
+            // 5. 工具栏组件
+            toolbox: {
+                feature: {
+                    // 保存图片
+                    saveAsImage: {},
+                    // 切换图的类型
+                    magicType: {
+                        type: ['line', 'bar','stack']
+                    },
+                    // 数据区域缩放。
+                    dataZoom: {
+                        show:true
+                    },
+                    dataView: {
+                        show:true
+                    }
+                }
+            },
+            // 6. grid 直角坐标系内绘图网格
+            grid: {
+                left: '6%',
+                right: '6%',
+                bottom: '3%',
+                // 决定 grid 区域是否包含坐标轴的刻度标签。
+                containLabel: true // 一般情况下为true
+            },
+
+            // 7. xAxis x轴的配置项
+            xAxis: {
+                // 类型 , 类目
+                // 类目 :  类, 一类. 目: 系列,一个一个的. 具有共同属性的一组数据 元素集合.
+                type: 'category',  
+                // 坐标轴两边留白策略 true，这时候刻度只是作为分隔线
+                // 标签和数据点都会在两个刻度之间的带(band)中间。
+                boundaryGap: true,
+                // 都属于星期, 类目数据
+                data: ['星期一', '星期二', '周三', '周四', '周五', '周六', '周日']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            // 8. 系列
+            series: [
+                {
+                    // 和tooltip  , legend 有对应关系
+                    name: 'ddd',
+                    // 图表类型是线形图
+                    type: 'line',
+                    stack:'总量',
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                },
+
+                {
+                    name: '联盟广告',
+                    type: 'line',
+                    stack:'总量',
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+
+                {
+                    name: '视频广告',
+                    type: 'line',
+                    stack:'总量',
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                
+                {
+                    name: '直接访问',
+                    type: 'line',
+                    stack:'总量',
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

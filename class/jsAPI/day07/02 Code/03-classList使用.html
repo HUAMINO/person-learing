@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body class="bg abc">
+    <div class="one two three"></div>
+    <button> 开关灯</button>
+    <script>
+        // 传统的添加className
+        // className 会覆盖原来所有的
+        // element.className = 'first change'
+        var div = document.querySelector('div')
+        console.log(div.classList[0]);
+
+        // 添加class  element.add()
+        div.classList.add('four');
+        console.log(div.classList[3]);
+
+        // 删除class  element.remove();
+        div.classList.remove('four');
+        console.log(div.classList[3]);
+
+        // 类名切换 element.toggle
+        // toggle:切换  原来有这个类名，就删除这个类名，原来没有这个类名，就添加上；
+        // div.classList.toggle('one')
+        var btn = document.querySelector('button');
+        var fn =   function(){
+            document.body.classList.toggle('bg');
+        }
+
+        btn.addEventListener('click',fn)
+
+            // setInterval(fn,2000);
+ 
+        
+    
+    </script>
+</body>
+
+</html>

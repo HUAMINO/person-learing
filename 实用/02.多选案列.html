@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<script>
+  window.onload = function () {
+
+    var checkedAllBtn = document.getElementById('checkedAllBtn');
+    var items = document.getElementsByName('items');
+    checkedAllBtn.onclick = function () {
+      // alert('全都选中了')
+      //  获取四个多选框items
+
+      for (var i = 0; i < items.length; i++) {
+        //设置四个多选框变成选中状态
+        // 通过多选框的checked属性可以来获取或设置多选框中的选中状态
+        items[i].checked = true;
+      }
+      checkedAllBox.checked = true;
+
+
+    }
+
+    // 全不选按钮
+    // 点击按钮以后，四个多选框都边成没选中的状态
+    var checkedNoBtn = document.getElementById('checkedNoBtn')
+    checkedNoBtn.onclick = function () {
+      // alert('全都选中了')
+      //  获取四个多选框items
+      var items = document.getElementsByName('items');
+      for (var i = 0; i < items.length; i++) {
+        //设置四个多选框变成选中状态
+        // 通过多选框的checked属性可以来获取或设置多选框中的选中状态
+        items[i].checked = false;
+        if (!items[i].checked) {
+          checkedAllBox.checked = false;
+          // break;
+        }
+      }
+
+    }
+
+    // 反选按钮
+    // 点击按钮以后，选中的变成没选中的，没选中的变成选中的
+    var checkedRevBtn = document.getElementById('checkedRevBtn')
+    checkedRevBtn.onclick = function () {
+      // alert('全都选中了')
+      //  获取四个多选框items
+
+      checkedAllBox.checked = true;
+      var items = document.getElementsByName('items');
+      for (var i = 0; i < items.length; i++) {
+        //  if(items[i].checked){
+        //   // 证明多选框没有选中，
+        //   items[i].checked = false;
+        //  }else {
+        //   items[i].checked = true;
+        //  }
+
+        items[i].checked = !items[i].checked;
+
+        if (!items[i].checked) {
+          checkedAllBox.checked = false;
+          // break;
+        }
+
+      }
+
+
+    }
+    // 提交按钮：
+    // 提交按钮以后，蒋所选中的多选框的vaLue属性值弹出
+    var sendBtn = document.getElementById('sendBtn')
+    sendBtn.onclick = function () {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].checked) {
+          alert(items[i].value);
+        }
+      }
+    }
+
+    //开始的不选和选中
+    var checkedAllBox = document.getElementById('checkedAllBox');
+    checkedAllBox.onclick = function () {
+
+      for (var i = 0; i < items.length; i++) {
+        //当他选中时，其余的也选中，当他取消时其余的也取消
+        // if(checkedAllBox.checked = true) {
+        //   items[i].checked = true;
+        // }else{
+        //   items[i].checked = false;
+        // }
+        items[i].checked = this.checked
+      }
+
+    }
+    /* 每个复选框点击的时候，第一行的全选都用作 */
+    for (var i = 0; i < items.length; i++) {
+      items[i].onclick = function () {
+        // alert('dddd')
+        checkedAllBox.checked = true;
+
+        for (var j = 0; j < items.length; j++) {
+          /* 每当点击就让第一个的按钮框 */
+          if (!items[j].checked) {
+            checkedAllBox.checked = false;
+            break;
+          }
+
+        }
+      };
+    }
+
+
+  };
+</script>
+
+<body>
+  <form>
+    你爱好的运动员？<input type="checkbox" id='checkedAllBox'>全选/全不选
+    <br>
+
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="蓝求">蓝求
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="乒乓球">乒乓球
+    <br>
+    <input type="button" id="checkedAllBtn" value="全选">
+    <input type="button" id="checkedNoBtn" value="全不选">
+    <input type="button" id="checkedRevBtn" value="反选">
+    <input type="button" id="sendBtn" value="提交">
+
+  </form>
+
+</body>
+
+</html>

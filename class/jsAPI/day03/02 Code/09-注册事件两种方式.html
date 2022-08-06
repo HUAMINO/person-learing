@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <!-- <button>ie9 attachEvent</button> -->
+    <script>
+       var btns = document.querySelectorAll('button')
+
+       // 1.传统注册事件的方式: 
+       btns[0].onclick = function () {
+        console.log("ddddd");
+       }
+
+
+       // 2. 事件监听的方式注册事件
+       // addEventListener(type, listener[,useCapture])
+       // type: 事件类型字符串，比如click、mouseover，前面不需要加on；
+       // listener: 事件处理函数，事件发生时，会调用该监听函数；
+       // useCapture: 可选参数，是布尔值，默认是false，表示事件冒泡。（学习完DOM事件流在进一步学习）；
+
+       // add 添加, Event 事件, Listener 监听器
+       btns[1].addEventListener('click',function() {
+        console.log('我是注册监听事件');
+
+       })
+
+       btns[1].addEventListener('click',function() {
+        console.log('我是注册监听事件');
+
+       })
+
+       
+        // 3. attachEvent ie9以前的版本支持
+        // btns[2].attachEvent('onclick', function() {
+        //    alert('我IE自己都不支持, 就问你怕不怕');
+        // })
+
+        //回调函数： 刚开始不执行，后来应为触发了事件在回来执行
+        //1.函数的声明方式
+        //function 声明
+          function fn(){
+            console.log('ddd');
+        
+          }
+          //2.表达式方式：
+          var fd = function () {
+            console.log('ddd');
+          }
+          //注意，fn， fd函数名不要加括号，加括号表示调用执行
+          btns[1].addEventListener('click',fn);
+          btns[1].addEventListener('click',fd);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

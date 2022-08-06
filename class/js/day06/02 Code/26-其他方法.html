@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 替换字符 replace('被替换的字符', '替换为的字符')  它只会替换第一个字符
+
+         var str = 'andyandyandy';
+         console.log(str.replace('a','c'));
+
+         while(str.indexOf('a') !== -1) {
+            str = str.replace("a",'c')
+         }
+         console.log(str);
+        // 2. 字符转换为数组 split('分隔符')    前面我们学过 join 把数组转换为字符串
+        var str = 'andy-andy-an-dy';
+        console.log(str.split('-'));
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

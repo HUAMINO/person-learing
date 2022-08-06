@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css" />
+</head>
+
+<body style="padding: 15px">
+    <!-- 添加图书的Panel面板 -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加新图书</h3>
+        </div>
+        <div class="panel-body form-inline">
+            <div class="input-group">
+                <div class="input-group-addon">书名</div>
+                <input type="text" class="form-control" id="iptBookname" placeholder="请输入书名" />
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon">作者</div>
+                <input type="text" class="form-control" id="iptAuthor" placeholder="请输入作者" />
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon">出版社</div>
+                <input type="text" class="form-control" id="iptPublisher" placeholder="请输入出版社" />
+            </div>
+
+            <button id="btnAdd" class="btn btn-primary">添加</button>
+        </div>
+    </div>
+
+    <!-- 图书的表格 -->
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+
+    <script src="./lib/axios.min.js"></script>
+    <script>
+        function getBookList() {
+            axios({
+                method: 'get',
+                url: 'http://ajax-base-api-t.itheima.net/api/getbooks'
+            })
+
+                .then(function (res) {
+                    let new_arr = res.data.data.map(function (item) {
+                        return `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.bookname}</td>
+                <td>${item.author}</td>
+                <td>${item.publisher}</td>
+                <td><a href="javascript:;" class="del" data-id="${item.id}">删除</a></td>
+            </tr>
+            `
+                    })
+                    document.querySelector('#tb').innerHTML = new_arr.join('');
+
+
+                })
+                .catch(function (err) {
+                    alert('网络异常,请稍后再试');
+                    console.log(err);
+                })
+
+        }
+
+        // 当用户打开页面喧嚷一次
+        getBookList();
+
+        // 添加数据
+        document.querySelector('#btnAdd').addEventListener('click', function () {
+            axios({
+                method: 'post',
+                url: 'http://ajax-base-api-t.itheima.net/api/addbook',
+                data: {
+                    bookname: document.querySelector("#iptBookname").value,
+                    author: document.querySelector("#iptAuthor").value,
+                    publisher: document.querySelector("#iptPublisher").value
+                }
+            })
+                .then(function (res) {
+                    console.log(res);
+                    // 当图片添加成功之后，在此渲染以下。
+                    getBookList();
+
+                })
+
+                .catch(function (err) {
+                    alert('网络异常,请稍后再试');
+                    console.log(err);
+                })
+
+        })
+
+        // 删除数据
+        var tbody = document.querySelector('#tb');
+
+        tbody.addEventListener('click', function (e) {
+            if (e.target.className !== 'del') {
+                return
+            }
+            axios({
+                method: 'DELETE',
+                url: 'http://ajax-base-api-t.itheima.net/api/delbook',
+                params: {
+                    id: e.target.dataset.id,
+                },
+
+            })
+                .then(function (res) {
+                    getBookList();
+                    console.log(res);
+
+                })
+
+                .catch(function (err) {
+                    alert('网络异常,请稍后再试');
+                    console.log(err);
+                })
+        })
+    </script>
+</body>
+
+</html>

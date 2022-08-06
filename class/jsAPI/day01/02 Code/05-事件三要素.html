@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">唐伯虎</button>
+    <div></div>
+    <p></p>
+    <script>
+        // 事件: 页面上每个元素都可以触发一些JS事件; 触发-响应的机制
+
+
+        // 1.获取事件源
+        var btn = document.querySelector('#btn');
+        console.log(btn);
+        //注册事件，(绑定事件) On当什么什么的时候，click点击
+        btn.onclick = function() {
+            console.log('点秋香');
+        }
+    </script>
+</body>
+
+</html>

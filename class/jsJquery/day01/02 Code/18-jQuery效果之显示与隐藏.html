@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+    <script>
+        // 一般情况下，显示隐藏不加动画 show() hide() toggle()
+        // https://jquery.cuishifeng.cn/hide.html
+        // show()
+        $('button').eq(0).click(function(){
+            // show() 不传参数,没有动画效果
+            // $('div').show();
+
+            // 1. 第一个参数 speed : slow /normal /fast / 1000 或者传动画时长
+            $('div').show(2000);
+
+            // 2. 第二个参数 swing / liner  先慢后快 在满 / 匀速
+
+            // $('div').show(5000,'swing');
+            // $('div').show(5000,'linear')
+
+            // 3. 第三个参数 fn 回调函数
+            var fn = function(){
+                console.log('jquery 很简单，还是要学');
+            }
+            $('div').show(1000,fn);
+
+        })
+
+        // hide()
+        $('button').eq(1).click(function(){
+
+            // hide() 不传参数,没有动画效果
+            // $('div').hide();
+            // 1. 第一个参数 speed : slow /normal /fast / 1000 或者传动画时长
+            $('div').hide(2000);
+
+            // 2. 第二个参数 swing / liner  先慢后快 在满 / 匀速
+
+            // $('div').hide(5000,'swing');
+            // $('div').hide(5000,'linear')
+
+            // 3. 第三个参数 fn 回调函数
+            var fn = function(){
+                    console.log('jquery 很简单，还是要学');
+                }
+                $('div').hide(1000,fn);
+        })
+
+        $('button').eq(2).click(function(){
+
+            // toggle() 不传参数,没有动画效果
+            // $('div').toggle();
+            // 1. 第一个参数 speed : slow /normal /fast / 1000 或者传动画时长
+            $('div').toggle(2000);
+
+            // 2. 第二个参数 swing / liner  先慢后快 在满 / 匀速
+
+            // $('div').toggle(5000,'swing');
+            // $('div').toggle(5000,'linear')
+
+             // 3. 第三个参数 fn 回调函数
+             var fn = function(){
+                    console.log('jquery 很简单，还是要学');
+                }
+                $('div').toggle(1000,fn);
+        })
+    </script>
+</body>
+
+</html>

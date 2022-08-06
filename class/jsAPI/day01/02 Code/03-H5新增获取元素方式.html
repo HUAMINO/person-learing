@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <p class="item">1</p>
+    <p class="item">2</p>
+    <p class="item">3</p>
+    <p class="item">4</p>
+    <script>
+    
+    // H5 提供的新方法 , 获取元素
+
+    var boxs = document.getElementsByClassName('box');
+    console.log(boxs);
+
+
+    var box = document.querySelector('.box')
+    console.log(box);
+
+    /* querySelectorAll() */
+    //返回指定选择器的所有元素对象集合，一堆，伪数组。
+    //注意：1.获取到的是一堆元素集合2
+    var box2 = document.querySelectorAll('.box')
+    console.log(box2);
+
+    console.log('-----------------');
+    var nav2 = document.querySelectorAll('#nav')
+    console.log(nav2);    
+
+    console.log('-----------------');
+    var lis2 = document.querySelectorAll('li') //伪数组
+    console.log(lis2);
+
+    /* 获取id为nav下的所有li */
+    /* 1.先获取id为nav的元素 */
+    var nav3 = document.getElementById('nav');
+    var lis3 = nav3.querySelectorAll('li');
+    console.log(lis3);
+    /*  */
+    console.log('------------');
+    //简介写法，实际开发推荐
+    //var lis4 = document.querySelectorAll('#nav li')
+
+ 
+    console.log(test);
+
+    
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        // 页面加载事件,  当dom元素加载完成后, 执行里面的代码
+        document.addEventListener('DOMContentLoaded',function() {
+            /* 游览器窗口大小的监听 resize re重置,size 大小 */
+            var div = document.querySelector('div');
+            window.addEventListener('resize',function() {
+                /* 获取当前游览器窗口的宽度  window.innerWith */
+                // console.log(div.innerWidth);
+                if(window.innerWidth < 600) {
+                    div.style.display= 'none';
+
+                }else{
+                    div.style.display = 'block'
+                }
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <div></div>
+</body>
+
+</html>

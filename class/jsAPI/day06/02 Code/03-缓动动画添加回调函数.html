@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点击夏雨荷到500</button>
+    <button class="btn800">点击夏雨荷到800</button>
+    <span></span>
+    <script>
+        // 给封装的函数添加回调函数callback(); 
+        // 回调函数: 回头再调用的函数, 也就是当满足触发条件, 再调用的函数
+        // 函数也可以作为参数
+
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        var span = document.querySelector('span');
+
+        
+        function animate(obj, target,callback) {
+                clearInterval(obj.timer)
+                obj.timer = setInterval(function(){
+                    var step = (target - obj.offsetLeft) / 10
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                    /* 当到达指定的位置 */
+                    if (obj.offsetLeft == target){
+                        /* 应为每次点击都会被调用,所以需要清楚定时器 */
+                        clearInterval(obj.timer);
+                        /* 判断这个函数是否存在如果不存在则不调用 */
+                        // 普通写法
+                        /* if(callback){
+                              callback(); 
+                        } */
+                        callback&&callback(); 
+                    }
+                    obj.style.left = obj.offsetLeft + step + 'px'
+                }, 15)
+  
+            }
+
+            var fn = function(){
+                span.style.backgroundColor = 'orange';
+                span.style.width = '300px';
+                span.style.height = '300px';
+                span.style.transform = 'rotate(3600deg)';
+                span.style.borderRadius = '50%';
+                span.style.transition = 'all 2s';
+
+            }
+
+            btn800.addEventListener('click',function(){
+                animate(span,800,fn);
+            })
+        
+        
+
+    </script>
+</body>
+
+</html>

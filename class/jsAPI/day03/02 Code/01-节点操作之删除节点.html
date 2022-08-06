@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强1</li>
+        <li>光头强2</li>
+        <li>光头强3</li>
+        <li>光头强4</li>
+        <li>光头强</li>
+    </ul>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        console.log(btn);
+        console.log(ul);
+        console.log(ul.children.length);
+        // var lis = 
+      /* 删除子元素的节点 
+      node.removeChild(child)
+      */
+        btn.onclick = function () {
+            if(ul.children.length === 0){
+                  this.disable = true;
+            }else{
+                ul.removeChild(ul.children[0]);
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // （1） 触摸元素 touchstart：  获取手指初始坐标，同时获得盒子原来的位置
+        // （2） 移动手指 touchmove：  计算手指的滑动距离，并且移动盒子
+        // （3） 离开手指 touchend:
+        var div = document.querySelector('div');
+        // 初始化 startx 和starty 当触摸dom元素的时候，存放手指触摸式的初始坐标值
+        var startX = 0;
+        var startY = 0;
+        // 初始化x,y 当触摸dom元素的时候，记录盒子的初始位置
+
+        var  x = 0;
+        var y = 0;
+        // 2.手指触摸dom元素的时候，touchstart
+        div.addEventListener('touchstart',function(e){
+            // 手指触摸dom元素的初始坐标值
+            startX = e.targetTouches[0].pageX;
+            startY = e.targetTouches[0].pageY;
+            // 记录dom元素的初始位置
+            x = this.offsetLeft;
+            y = this.offsetTop;
+            // console.log(startX,startY);
+
+            // console.log(x,y);
+            // 手指移动的距离 = 手指移动冻后的距离 - 手指原来的初始坐标
+
+
+        })
+
+        div.addEventListener('touchmove',function(e){
+            moveX = e.targetTouches[0].pageX - startX;
+            moveY = e.targetTouches[0].pageY - startY;
+            
+            // 盒子移动的距离
+            this.style.left = x + moveX  + 'px';
+            this.style.top = y + moveY  + 'px';
+            // 阻止默认行为：组阻止手机移动，屏幕会滚动的这样的默认行为。
+            e.preventDefault();
+
+        })
+
+
+        
+    </script>
+</body>
+
+</html>

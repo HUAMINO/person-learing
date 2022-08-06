@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box {
+    margin: 100px auto;
+    width: 600px;
+    height: 600px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+
+    /* 侧边栏对齐方式 */
+    /* 从起点开始 */
+    /* align-items: flex-start; */
+
+    /* 从终点开始排列 */
+    
+    /* align-items: flex-end; */
+
+    /* 居中侧边栏 */
+    align-items: center;
+  }
+
+  .box .one {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+
+  .box .two {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+  }
+
+  .box .three {
+    width: 100px;
+    height: 100px;
+    background-color:grey;
+  }
+
+
+</style>
+<body>
+  <div class="box">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+</body>
+</html>

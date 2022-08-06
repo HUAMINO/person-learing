@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.itcast.cn" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" id="" checked disabled>
+    <div index="1" data-index="2">我是div</div>
+    <span data-top="123">123</span>
+    <script>
+
+            console.log($('a').prop('href'));
+            console.log($('div').prop('index'));
+
+            $('input').change(function () { 
+                console.log($('input').prop('checked')); 
+                
+            });
+            // 设置元素的固有属性  prop('属性名','属性值')
+            $('a').prop('href','www.baidu.com')
+            $('a').prop('src','www.baidu.com')
+            $('a').prop('target','_blank')   //_blank 新窗口跳转   _self
+
+            // 1.attr()设置或获取自定义属性   (元素本身的属性也可以获取设置)
+            console.log($('div').attr('index'));
+            console.log($('div').attr('data-index'));
+            // 本身的属性
+            console.log($('input').attr('type'));
+            console.log($('input').attr('checked'));
+
+            // 0, '', null , undefined ,nan
+            // 2.设置自定义属性  attr("属性名","属性值")
+            $('input').attr('data-demo','好好学习天天向上')
+            
+    </script>
+</body>
+
+</html>

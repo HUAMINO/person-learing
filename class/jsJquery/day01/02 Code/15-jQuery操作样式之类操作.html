@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+
+        .current {
+            background-color: orange;
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- <div></div> -->
+    <div class="first "></div>
+
+    <script>
+
+        var div = document.querySelector('div')
+        // 添加类名
+        div.addEventListener('click', function () {
+            div.classList.add('current');
+        })
+        // 移除类名
+        div.addEventListener('click', function () {
+            div.classList.remove('current');
+        })
+        // 切换类名
+        div.addEventListener('click', function () {
+            div.classList.toggle(); ('current');
+        })
+        //
+        $('div').click(function () {
+            $(this).addClass('current');
+            // 移除
+            $(this).removeClass('current');
+            $(this).toggleClass('current');
+
+        });
+
+
+    </script>
+</body>
+
+</html>

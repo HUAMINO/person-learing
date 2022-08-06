@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // break 退出整个循环
+        for(var i = 1; i <=5; i++) {
+            if(i == 3) {
+                console.log('有毒');
+                break;//直接退出整个循环，跳到for循环下面语句执行
+            }
+            console.log(`这是第${i}`);
+        }
+        console.log('我去吃葡萄了');
+
+
+
+        //break搭配while
+        while(true) {
+            var now = prompt('你喜欢吃糖吗');
+            if(now == '喜欢') {
+                //如果满足某个条件，跳出循环
+                break;
+            }
+
+        }
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: black;
+    perspective: 900px;
+
+
+  }
+
+  .main {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    margin: 50px auto;
+    animation: move 2s infinite;
+    
+  }
+
+  .main div {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 0;
+    left: 0;
+  }
+
+  .font {
+    transition: all 5s;
+    background-color: yellow;
+    transform: translateZ(200px);
+    
+  }
+  
+
+  .back {
+    background-color: pink;
+    transform: translateZ(-200px) ;
+  }
+
+  .top {
+    background-color: rgb(252, 67, 0);
+    transform: rotateX(90deg) translateZ(200px);
+  }
+
+  .buttom {
+    background-color: rgb(193, 0, 252);
+    transform: rotateX(90deg) translateZ(-200px);
+  } 
+  .left {
+    background-color: rgb(0, 252, 63);
+    transform: rotateY(90deg) translateZ(200px);
+  } 
+  .right {
+    background-color: rgb(86, 86, 87);
+    transform: rotateY(-90deg) translateZ(200px);
+  } 
+
+@keyframes move {
+  0%{
+     transform: rotate3d(1,1,0,0);
+  }
+
+  100% {
+    transform: rotate3d(1,1,0,360deg);
+  }
+}
+</style>
+<body>
+  <div class="main">
+    <div class="font"></div>
+    <div class="back"></div>
+    <div class="top"></div>
+    <div class="buttom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* border: 10px solid red; */
+            /* border-left: 30px solid red; */
+            border: 10px solid orange;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div')
+
+        // client 系列, 返回值是number 不带单位
+
+
+        //1.clientTop ,clientLeft 返回元素的border大小
+
+        console.log(div.clientLeft);
+        console.log(div.clientLeft);
+
+        //2.clientWidth ,clientHeight 返回元素自身的大小， 不包含 border
+        //clientWidth = width + padding
+        console.log(div.clientWidth);
+        console.log(div.offsetWidth);
+
+        //3.clientWidth 和 offsetWidth 的 最大区别
+        //clientWidth 不包含 border  offsetWidth 包含border
+
+
+
+
+    </script>
+</body>
+
+</html>

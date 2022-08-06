@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style></style>
+</head>
+
+<body>
+  <input type="file" id="file" multiple accept="image/jpg,image/png">
+  <button id="btn">发送</button>
+</body>
+<script>
+  // 1. 获取上传文件的按钮
+  var btnUpload = document.querySelector('#btnUpload')
+  // 2. 为按钮添加 click 事件监听
+  btnUpload.addEventListener('click', function () {
+    // 3. 获取到选择的文件列表
+    var files = document.querySelector('#file1').files
+    if (files.length <= 0) {
+      return alert('请选择要上传的文件！')
+    }
+    var fd = new FormData()
+    fd.append('avatar', files[0])
+    // 1. 创建 xhr 对象
+    var xhr = new XMLHttpRequest()
+    // 2. 调用 open 函数，指定请求类型与URL地址。其中，请求类型必须为 POST
+    xhr.open('POST', 'http://ajax-base-api-t.itheima.net/api/upload/avatar')
+    // 3. 发起请求
+    xhr.send(fd)
+  })
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            text-align: center;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: purple;
+            line-height: 200px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">目标盒子</div>
+    </div>
+    <script>
+    var son = document.querySelector('.son')
+    var father = document.querySelector('.father')
+    var body = document.body
+    var html = document.documentElement
+
+    //   //默认为，空，false，表示事件流
+    //   son.addEventListener('click',function() {
+    //     console.log('我是son');
+    // },false)
+    // father.addEventListener('click',function() {
+    //     console.log('father');
+    // },false)
+    // body.addEventListener('click',function() {
+    //     console.log('body');
+    // },false)
+    // html.addEventListener('click',function() {
+    //     console.log('html');
+    // },false)
+
+    // document.addEventListener('click',function() {
+    //     console.log('document');
+    // },false)
+
+      //默认为，空，false，表示事件冒泡
+      son.addEventListener('click',function() {
+        console.log('我是son');
+    })
+    father.addEventListener('click',function() {
+        console.log('father');
+    })
+    body.addEventListener('click',function() {
+        console.log('body');
+    })
+    html.addEventListener('click',function() {
+        console.log('html');
+    })
+    document.addEventListener('click',function() {
+        console.log('document');
+    })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #262626;
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            background-color: #262626;
+            border-radius: 50%;
+            border: 3px solid rgb(90, 88, 88);
+        }
+
+        .yuan {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #fff000;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transition: all 10s;
+        }
+
+        .yuan::after {
+            content: '';
+            position: absolute;
+            right: 24px;
+            top: 17px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #fff000;
+            box-shadow: 0 0 5px 5px rgba(255, 255, 255, .5);
+        }
+
+        .box:hover .yuan {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 35px;
+            color: rgb(220, 239, 9);
+            text-shadow: 0 0 15px rgba(251, 246, 0, 0.7);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 容器 -->
+    <div class="box">
+        <!-- 转动的圆 -->
+        <div class="yuan"></div>
+        <!-- 文字 -->
+        <div class="text">Loading</div>
+    </div>
+</body>
+
+</html>

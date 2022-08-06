@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body></body>
+  <script>
+var xhr = new XMLHttpRequest()
+    xhr.open('GET', 'http://www.liulongbin.top:3007/my/userinfo')
+    xhr.setRequestHeader(
+      'Authorization',
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAwMDksInVzZXJuYW1lIjoiaGhoMzMzIiwicGFzc3dvcmQiOiIiLCJuaWNrbmFtZSI6IiIsImVtYWlsIjoiIiwidXNlcl9waWMiOiIiLCJpYXQiOjE2NTgxMzQzMzMsImV4cCI6MTY1ODE3MDMzM30.5pvAIw3t8WIjMa1K6OMzq11y47snrgohDiABo-6or8M',
+    ) // 注意： Bearer和token之间有个空格，这是规定
+    xhr.send()
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          console.log(xhr.response)
+        }
+      }
+    }
+  </script>
+</html>

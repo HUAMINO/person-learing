@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+
+   var arrNew = []; 
+   for(var i =0; i< 7; i++) {
+    var num =arr.length-1;
+    var run = Math.round(Math.random() * num);
+    arrNew.push(arr[run]);
+    arr.splice(run,1);   
+   }
+   console.log(arrNew);
+  </script>
+</body>
+</html>

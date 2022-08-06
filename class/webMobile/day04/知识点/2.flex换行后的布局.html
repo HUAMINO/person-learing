@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    width: 800px;
+    height: 500px;
+    background-color: grey;
+    display: flex;
+    /* 一行像是不下的时候就换行 */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+    /* 当出现换行的情况是可以使用   */
+    align-content: space-evenly;
+  }
+
+  li {
+    width: 170px;
+    height: 240px;
+    background-color: aqua;
+  }
+</style>
+
+<body>
+  <ul>
+    <li>额呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃呃</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+
+</html>

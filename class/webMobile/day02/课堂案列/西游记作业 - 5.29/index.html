@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* 去除边框 */
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .box {
+    width: 1920px;
+    height: 786px;
+    /* background: url(./images/1.jpg) no-repeat; */
+    position: relative;
+    /* animation: beijin 5s infinite; */
+
+  }
+  .bei {
+    width: 1920px;
+    height: 786px;
+    animation: beijin 35s infinite  forwards;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .bei ul {
+    width: 3840px;
+    height: 786px;
+    position: absolute;
+    top: 0;
+    left: -1920px;
+  }
+  .bei ul li {
+    float: left;
+    position: relative;
+    width: 1920px;
+    height: 786px;
+  }
+
+    @keyframes beijin{
+      0% {
+        transform: translate(0,0);
+      }
+
+      100% {
+        transform: translate(1920px,0);
+      }
+    }
+ .renwu {
+   position: absolute;
+   top: 306px;
+   left: 483px;
+   width: 800px;
+   height: 180px;
+   /* animation: beijin 35s infinite; */
+ }
+  .box .renwu div {
+    float: left;
+    width: 190px;
+    height: 180px;
+    /* border: 1px solid red; */
+    overflow: hidden;
+  }
+
+  .box .renwu .sun img ,  
+    .box .renwu .pig img {
+    animation: run 2s steps(8) infinite;
+  }
+
+  @keyframes run {
+    0% {
+        transform: translate(0,0);
+    }
+
+    100% {
+      transform: translate(-1600px,0);
+    }
+  }
+
+
+  .box .renwu .tang {
+    width: 170px;
+    height: 180px;
+    margin-top: -24px;
+  }
+  .box .renwu .sha {
+    width: 210px;
+    height: 180px;
+  }
+
+  .box .renwu .sha img{
+    animation: sha 2s steps(8) infinite;
+  }
+  @keyframes sha {
+    0% {
+        transform: translate(0,0);
+    }
+
+    100% {
+      transform: translate(-1680px,0);
+    }
+  }
+
+  .box .renwu .tang img   {
+    animation: tang 2s steps(8) infinite;
+  }
+  @keyframes tang {
+    0% {
+        transform: translate(0,0);
+    }
+
+    100% {
+      transform: translate(-1360px,0);
+    }
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="bei">
+      <ul>
+        <li><img src="./images/1.jpg" alt=""></li>
+        <li><img src="./images/2.jpg" alt=""></li>
+      </ul>
+    </div>
+
+    <div class="renwu">
+      <div class="sun"><img src="./images/west_01_3ca39fe.png"  alt=""></div>
+      <div class="pig"><img src="./images/west_02_47bad19.png"  class="left" alt=""></div>
+      <div class="tang"><img src="./images/west_03_f962447.png" alt=""></div>
+      <div class="sha"><img src="./images/west_04_6516d80.png" alt=""></div>
+    </div>
+  </div>
+</body>
+</html>

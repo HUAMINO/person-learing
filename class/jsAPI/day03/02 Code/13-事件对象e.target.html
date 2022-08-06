@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+    //1.  e.target  和  this 的区别
+    //1.1 e.target 返回的是触发事触发的对象
+    //1.1 this 返回的是绑定事件的对象（元素）
+
+
+    var div = document.querySelector('div')
+    div.addEventListener('click',function(event){
+        console.log(e.target);//返回的是
+    })
+
+
+    var ul = document.querySelector('ul')
+    ul.addEventListener('click',function(event){
+        console.log(event.target);//返回的是触发事件的对象(元素) 点击li，返回的是li
+        console.log(this); //指向的是ul，this指向
+        //1.e.target
+        //e.target 指向的是 触发事件的元素
+        //e.target  也就是点击的是那个元素，指向的就是哪个元素
+
+        //2.this
+        //指向的是绑定事件的元素
+
+        //3. e.currentTarget
+        //指向的是绑定事件的元素
+
+        //console.log(e.currentTarget)   返回的是指向对象的元素 和this一样
+    
+        
+
+
+
+    })
+
+
+    
+    </script>
+</body>
+
+</html>

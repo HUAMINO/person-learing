@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 3.3.1 -->
+    <script src="jquery.min.js"></script> 
+    <!-- 3.6.0 -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // 了解
+
+            // 1. 如果$符号被重写覆盖了， jQuery还可以用
+            function $(ele) {
+                return document.querySelector(ele);
+            }
+            console.log($("div"));
+            // // $('div') 
+            // $ === jQuery
+            jQuery('div')
+            console.log(jQuery('div'))
+    
+            
+            // 2. 如果 $ 符号冲突，比如两个版本的jQuery都引入了
+            // 可以给后一个jQuery重新声明一个新变量表示$符号：
+            var new$ = jQuery.noConflict()  // 让后一个,3.6.0 放弃$控制权, 用新的变量替换$
+
+            console.log($.fn.jquery) //3.3.1  返回jquery版本 3.6.0
+            console.log(new$.fn.jquery) // 3.6.0
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+</body>
+
+</html>

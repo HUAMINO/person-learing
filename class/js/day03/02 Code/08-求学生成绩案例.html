@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 弹出输入框输入总的班级人数(num)
+        // 依次输入学生的成绩（ 保存起来 score）， 此时我们需要用到
+        // for 循环， 弹出的次数跟班级总人数有关系 条件表达式 i <= num
+        // 进行业务处理: 计算成绩。 先求总成绩（ sum）， 之后求平均成绩（ average）
+        // 弹出结果
+     var sum = prompt('请输入本班总人数');
+     var total = 0;
+     for(var i = 1; i <= sum;i++) {
+        var score = prompt(`请输入第${i}个同学成绩`);
+        var scoreNow = parseInt(score);
+        total +=scoreNow;
+        
+     }
+     var average = (total/num).toFixed(2);
+     console.log(total);
+     console.log(average);
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 根据位置返回字符
+       // 1. charAt(index) 根据位置返回字符
+                
+         var str = 'andy';
+        console.log(str.charAt(0));
+        console.log(str.charAt(3));
+        console.log(str.charAt(4));
+
+        for( var i = 0; i < str.length; i++){
+            console.log(str.charAt(i))
+        }
+        // // 2. charCodeAt(index)  返回相应索引号的字符ASCII值 目的： 判断用户按下了那个键 
+        // console.log('---------------');
+        // console.log(str.charCodeAt('a'));
+        // 3. str[index] H5 新增的
+
+        document.addEventListener('keydown',(e) =>{
+            console.log(e.keyCode);
+            if (e.keycode === 65){  
+               console.log('NIDAINSOD');
+            }
+            if (e.keyCode === 97){
+                console.log('ddddd');
+            }
+        })
+
+        console.log('-------------------');
+
+
+        //es6 新特性
+        // var str1 = 'apple';
+        // console.log(str1[0]);
+        // console.log(str1[1]);
+        // console.log(str1[2]);
+        // console.log(str1[3]);
+        // console.log(str1[4]);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

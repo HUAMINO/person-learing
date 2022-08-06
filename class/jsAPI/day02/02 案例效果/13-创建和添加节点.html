@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+        <li class="demo">ffffffff</li>
+        <li>123</li>
+    </ul>
+    <script>
+        // 1. 创建节点元素节点
+        var li = document.createElement('li');
+        // console.log('我是ddd');
+        li.innerHTML = 'wo是niddd'
+        // 2. 添加节点 node.appendChild(child)  node 父级  child 是子级 后面追加元素  类似于数组中的push
+        var ul = document.querySelector('ul');
+        ul.appendChild(li)
+
+        //3.添加节点，从前面添加
+        //node.insertBefore(child,指定元素)
+        //node 表示父节点，child 表示要添加的节点
+        //注意：指定元素 一定是node的子元素/子节点
+
+        var lis2 = document.createElement('li');
+        lis2.innerHTML = '我事你的滴滴滴'
+        ul.insertBefore(lis2,ul.children[0])
+        ul.insertBefore(lis2,ul.children[ul.children.length - 1])
+
+       // 在类名为demo的li标签前面添加
+       var li_demo = document.querySelector('.demo')
+       ul.insertBefore(lis2,li_demo)
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    请求头 请求行请求体 
+    // 响应行 响应头 响应体 
+
+    //method
+    //     -get
+                //  get 请求是没有请求体的,不允许
+    //     -post
+                // 有请求
+    //     -delete
+    //     -etc.....
+    // ?后面的当成游览器的开始
+
+    var url = 'http://123.4.32.2:80/img黑马/1.png?id=1'
+    var new_ul = encodeURI(url);
+    console.log(new_ul);
+    
+
+        //对url里的非ASCII进行编码吧中码 
+        
+        encodeURI()//对url里面的非ascii进行编码，不能对？进行编码
+        
+        // 对编码后的字符串进行解码
+        decodeURI()
+     var url2 = decodeURI('%E9%BB%91%E9%A9%AC')
+     console.log(url2);
+
+    //  更彻底 encodeURIComponent 
+
+    var url5 = encodeURIComponent(url); //可以对？进行编码
+
+    // img
+    
+    // 需求：img?黑马 中间的？换联网会把他当成查询字符串的开头，
+    // 但是我们指吧这个？当成一个普通的字符串
+    var url7 = `http://123.4.32.2:80/${encodeURIComponent('img黑马')}/1.png?id=1`
+    console.log(url7);
+    </script>
+</body>
+
+</html>

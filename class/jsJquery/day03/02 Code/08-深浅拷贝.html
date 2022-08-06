@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">                
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./jquery-3.6.0.min.js"></script>
+<body>
+    <script>
+        // 基本数据类型:
+        // Symbol, BigInt, Number, String, Boolean, undefined, null
+        // 引用类型
+        // // object
+        //     - function
+        //     - Array
+        //     - Object
+        //     - Math
+        //     - RegExp
+
+        // 数据类型在内存中的存储
+        // 1. 基本数据类型存在栈中stack
+        // 2. 引用类型存在堆里面 heap
+
+        // 浅拷贝 只拷贝了地址
+        // 浅拷贝如果修改了拷贝的对象，会影响原始值，反之亦然
+
+
+
+        // 1. 实现浅拷贝的方式
+
+        // 1） 应用类型的赋值操作
+        // 2） 数组contact() slice()方法
+        // 3）Object.assign() 对象的 ES6新增
+        // 4）扩展运算符  ...    [...new Set()]
+
+
+        // 2. 深拷贝
+        // 在堆内存里面新开辟一块空间，递归的拷贝原对象的所有属性。  
+        // 拷贝的目标对象和原对象 互不影响
+
+        var obj = {
+            name: '小张',
+            age: 18,
+            msg :{
+                hobby:'音乐'
+            },
+            fn:function(){},
+            test1: null,
+            test2: undefined,
+            test3: NaN
+        }
+
+        // 赋值， 浅拷贝， 会修改原对象
+        // var shallowObj = obj
+        // shallowObj.name = '小王'
+        // console.log(obj)
+
+        // 1. JSON.parse(JSON.stringify()) 可以实现深拷贝， 但是有缺陷 
+        // 1） 对象内有函数， 函数会丢失 
+        // 2) undefined 丢失， NaN变为null了 
+
+        var deepObj = JSON.parse(JSON.stringify(obj))
+        // deepObj.age = 20
+        console.log(obj)
+        console.log(deepObj)
+
+        // 2. 写一个深拷贝 （之后最好掌握这个）
+
+        // 3. lodash js库   deepClone 
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        $(function() {
+            
+            // 筛选选择器
+            // 从多个里面筛选出我们想要的元素
+            // 获取第一个li元素
+            $('li:first').css('color','orange');
+
+            // 获取最后一个li
+            $('li:last').css('color','black');
+            // 根据索引号来寻
+            $('li:eq(2)').css('color','red');
+            // 奇数
+            $('ul li:odd').css('color','blue');
+            // 偶数
+            $('ul li:even').css('color','green');
+            
+        })
+    </script>
+</body>
+
+</html>

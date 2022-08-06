@@ -1,0 +1,53 @@
+.renwu {
+    position: relative;
+    float: left;
+    width: 588px;
+    height: 499px;
+    background-image: url(./img/人物.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.renwu::after {
+    position: absolute;
+    right: 10px;
+    top: 47%;
+    content: '';
+    width: 20px;
+    height: 10px;
+    background-color: #212325;
+    border-radius: 0 50% 50% 0;
+    z-index: 2;
+}
+
+.renwu:hover::after {
+    transition: all 1.5s;
+    transform: translateX(1300px);
+}
+
+.bazi {
+    margin-top: 90px;
+    margin-left: 700px;
+    float: left;
+    width: 310px;
+    height: 310px;
+
+}
+
+.bazi::before,
+.bazi::after {
+    position: relative;
+    content: "";
+    float: left;
+    width: 155px;
+    height: 310px;
+    background-image: url(./img/靶子.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: 1;
+}
+
+.bazi::after {
+    z-index: 3;
+    background-position: right;
+}

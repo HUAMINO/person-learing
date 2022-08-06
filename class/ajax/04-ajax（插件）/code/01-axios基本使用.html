@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./lib/axios.min.js"></script>
+    <script>
+        axios({
+            method: 'post',
+            url: 'http://ajax-base-api-t.itheima.net/api/addbook',
+            // 默认会自动将数据转换成查询字符串格式，并自动拼接到url后面
+            // params: {
+            //   bookname: '西游记',
+            //   id: 1,
+            // },
+
+            // data里的数据就是请求体
+            data: 'bookname=红楼梦2&author=bbb',
+            // 如果请求超时，会自动执行catch里的函数
+            timeout: 15000,
+            onDownloadProgress: function (e) {
+                // 这里可以获取到文件下载的进度
+            },
+            onUploadProgress: function (e) {
+                // 这里可以获取到文件上传的进度
+            },
+            // `onUploadProgress` 允许为上传处理进度事件onUploadProgress: function (progressEvent) {},// `onDownloadProgress` 允许为下载处理进度事件
+        })
+            // 如果请求成功 2xx，会自动执行then里的函数
+        .then(function (res) {
+            console.log(2222222)
+            // axios插件会自动将json格式的字符串解析成js对象或数组，并放在res.data中
+            // 什么意思？？？？  axios 内部会自动调用JSON.parse()
+            console.log(res.data)
+        })
+        .catch(function (err) {
+            // 错误提示
+            alert('yyyyyyyy')
+            // 查看错误信息
+            console.log(err)
+        })
+    </script>
+</body>
+
+</html>

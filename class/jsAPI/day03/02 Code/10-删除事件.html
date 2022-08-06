@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        button{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <button>Click Me</button>
+    <script>
+        // 需求, 点击按钮, 只弹一次对话框
+        // 不考虑attachEvent, detachEvent解绑, 对IE感兴趣的同学可以去了解
+
+        // 删除事件, 解绑事件
+        // 1. 传统注册的事件
+        var btns = document.querySelector('button');
+        // btns.onclick = function () {
+        //     console.log('dddd');
+        //     btns.disabled = true;
+        //     //删除事件，解绑一定要写到函数里面
+        //     btns.onclick = null
+        // }
+
+
+        // 2. 事件监听的方式
+
+        // btns.addEventListener('click', function() {
+        //     console.log('dddd');
+
+        // })
+        function fn() {
+            console.log('ddd');
+            btns.removeEventListener('click',fn)
+        }
+        
+        btns.addEventListener('click',fn)
+
+        //null  undefined String Number  bigInt Symbol boolean
+
+
+        
+
+
+
+        
+
+        
+    </script>
+</body>
+
+</html>

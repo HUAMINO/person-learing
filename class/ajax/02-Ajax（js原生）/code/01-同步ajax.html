@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body></body>
+  <script>
+      // 1.通过new构造函数得到一个ajax请求的实列对象
+      let xhr = new XMLHttpRequest();
+
+      // 2.准备好这次请求的方法method和url
+      xhr.open('get', 'http://www.liulongbin.top:3006/api/getbooks', false)
+
+      // 3.发射
+      xhr.send();
+
+      console.log('ddddd');
+      // 4.打印接收到的是响应体(不包含行和头)
+      console.log(xhr.response);
+  </script>
+</html>

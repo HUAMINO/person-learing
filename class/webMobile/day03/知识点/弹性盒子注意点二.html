@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    background-color: pink;
+    width: 1000px;
+    display: flex;
+    height: 500px;
+        /*允许换行  */
+    flex-wrap: wrap;
+
+
+  }
+
+  li {
+    /* 弹性盒子默认是不允许超范围的，虽然你设置了宽度是不会超出父容器的*/
+    /*    flex-shrink: 0;  收缩 默认是为 1的 当为0 是允许超出父容器 */
+    /* 超出的部分品均分配给几个弹性盒子 */
+    /* flex-shrink: 0; */
+    width: 200px;
+    height: 200px;
+  }
+
+  li:nth-child(1) {
+
+    background-color: red;
+  }
+
+  li:nth-child(2) {
+    background-color: rgb(79, 191, 18);
+  }
+
+  li:nth-child(3) {
+    background-color: rgb(90, 37, 212);
+  }
+
+  li:nth-child(4) {
+
+    background-color: rgb(50, 10, 10);
+  }
+
+  li:nth-child(5) {
+
+    background-color: rgb(0, 0, 0);
+  }
+
+  li:nth-child(6) {
+
+    background-color: rgb(243, 15, 255);
+  }
+</style>
+
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+  </ul>
+</body>
+
+</html>

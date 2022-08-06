@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* margin-top: 20px; */
+            /* font-size: 16px; */
+        }
+
+        .change {
+            background-color: purple;
+            font-size: 30px;
+            margin-top: 100px;
+            border-radius: 10px;
+        }
+
+        .first {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        // 1. 获取元素
+        var div = document.querySelector('div')
+
+        // 2. 注册事件
+        div.onclick = function () {
+            // div.style.width = '300px'
+            // this.style.height = '300px'
+            // this.style.borderRadius = '20px'
+            // this.style.backgroundColor = 'skyblue'
+            // this.style.fontSize = '30px'
+            // this.className = 'change'
+
+            // 1. className 当我们要修改很多样式的时候，
+            // 可以style里面写一个类名， 写上我们要修改的样式
+
+            // 2. 注意 className 会覆盖掉元素本身自带的类名 
+            // 如果要保留原来的类名， 也得一起写上
+            this.className = 'first change'
+        }
+
+            // 实际应用场景 
+            // 1. 适合多个样式都要修改的时候
+            // 2. 清空某个元素的所有类名
+            //   this.className = ''
+
+    </script>
+</body>
+
+</html>

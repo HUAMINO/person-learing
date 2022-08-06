@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // 键盘事件对象中的keyCode属性可以得到相应键的ASCII码值
+    // 1. 我们的keyup 和 keydown事件 e.keyCode 不区分字母大小写  a 和 A 得到的都是65
+    // 2. 我们的keypress 事件 区分字母大小写  a  97 和 A 得到的是65
+
+    document.addEventListener('keyup', function(e){
+        console.log(e)
+        console.log(e.keyCode) // e.key  // e.code
+        if (e.keyCode === 65){
+            console.log('你按下了a键')
+        }else{
+            console.log('你按的其他键')
+        }
+        // 1. 我们可以利用keyCode返回的ASCII码值, 判断用户按下了哪个键
+    })
+
+    // 2. keypress   区别字母大小写
+    // document.addEventListener('keypress', function(e){
+    //     console.log(e.keyCode)
+    //     // keypress  e.keyCode识别 字母的大小写  
+    //     // a ===> 97                                                                                                                                                 
+    //     // A ====> 65
+    //     // enter ===> 13  可以记一下
+    //     // space ===> 32                                                                                                                         
+    // })
+
+    // keydown 和 keypress 是键盘按下的时候触发, 
+    // 同时, 它比我们输入键值更早触发, 也就是按下keydown, 内部的函数先执行.
+    // 判断是s键, input框获取焦点了 , 再之后, s输入进去了 .
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <span>我是内容</span>
+    </div>
+    <input type="text" value="请输入内容">
+    <script>
+        // 1. 获取元素内容 html() innerHTML
+        // 获取元素内容   不加参数
+        var res  = $('div').html();
+        // 设置，需要传参数，也可以加标签
+        // $('div').html('123');
+        // $('div').html('<p>123</p>')
+
+       
+        // 2. 获取设置元素文本内容 text()
+
+        console.log($('div').text())  //保留了空格和换行  不识别html
+        console.log($('div').text().trim());  //去掉前后的空格
+
+        $('div').text('123');
+
+
+
+        // 3. 获取设置表单值 val()
+        console.log($('input').val());
+        // 设置表单内容
+        $('input').val('我是新设置的内容')
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

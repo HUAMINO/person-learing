@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Dmitry Soshnikov in ECMAScript | 2010-04-05 ECMA-262-3 in detail
+        // 立即执行函数
+        // http://dmitrysoshnikov.com/ecmascript/chapter-5-functions/
+
+        // https://www.zhihu.com/question/20298345/answer/14670020 JS是否需要加分号
+
+        // Immediately-Invoked Function Expression  invoked --> 执行
+        //  (IIFE)（立即执行函数） --> IIFE 
+        // 1.普通函数, 先声明, 后调用
+        // function fn(){
+        //     console.log(123)
+        // }
+        // fn()
+        // 2. 立即执行函数 :  不需要调用, 立马执行的函数（也叫自执行函数）
+        // 方式一
+        (function(){}());
+        /* 3.多个立即执行函数之间必须用分号隔开 */
+        (function(){})();
+        // 4.立即执行函数也可以传入参数
+        // 前面第一个小括号里面写上形参，
+
+        // 5.立即执行函数的作用
+        //  创建一个独立的作用域，里面所有的变量都是局部变量
+        // 不会对外界的变量有影响，也就是说，不会有命名冲突的情况
+         (function(a,b){
+            var num = 10;
+            console.log(num);
+         }(2,3));
+
+         (function(){
+            var num = 20;
+            console.log(num);
+         }());
+        //  实际应用：开发一些js插件 或者库的时候，可以用立即执行函数 包起来。
+
+         (function(){
+            var num = 20;
+            console.log(num);
+         })();
+
+
+        //  什么时候加分号?
+        // () [] / + -  
+        // 一行开头是括号或者方括号的时候加上分号就可以了，其他时候全部不需要。
+        // 如果一行代码以 ()  [] 开头, 在前面加分号就行了 
+        
+        // ;(function(){}())
+        // ;(function(){})()
+        // ;[]
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style></style>
+</head>
+
+<body></body>
+<script>
+  var xhr = new XMLHttpRequest()
+  xhr.open(
+    'GET',
+    'http://www.liulongbin.top:3006/api/getbooks?bookname=西游记&id=1',
+  )
+  xhr.send()
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        console.log(JSON.parse(xhr.response))
+      }
+    }
+  }
+</script>
+
+</html>

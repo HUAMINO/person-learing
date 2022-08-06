@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // console.log(parseFloat('12.4'));
+    // console.log( typeof(undefined));
+
+   //算术运算符的优先级
+/*    1.（）   2.自增自减   3.算术运算符  4.关系运算符》 《 */
+    // var  x = undefined;
+    // console.log(++x);
+
+    // console.log(typeof(NaN));
+
+    // var arr = [1,2,3,'dddd'];
+    // for(var key of arr) {
+    //   console.log(key)
+
+    // }
+
+    // var arr = ["孙悟空","唐曾"];
+    // arr.pop();
+    // console.log(arr);
+  
+  
+    // push末尾添加   pop末尾删除  unshift在第一个添加 
+    var num = parseInt(prompt("请输入数字"))
+    var count = 0;
+  
+    for(var i =1; i<= num; i++ ) {
+      if(num % i == 0 ) {
+       count++;
+      }
+    }
+    
+    if(count == 2) {
+      alert('这个数是');
+    }else{
+      alert('这个数不是');
+    }
+
+
+  
+  
+  </script>
+
+
+  
+</body>
+</html>

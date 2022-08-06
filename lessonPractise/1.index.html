@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .people {
+    width: 588px;
+    height: 499px;
+    background-image: url(./img/人物.png);
+    float: left;
+  }
+
+  .people::after {
+    content: '';
+    width: 0px;
+    float: left;
+    height: 5px;
+    margin-top: 234px;
+    margin-left: 564px;
+    background-color: brown;
+ 
+  }
+
+  .people:hover::after {
+    width: 10px;
+    height: 6px;
+    transform: translateX(900px);
+    transition: all 2s;
+  }
+
+  .bazi {
+    width: 310px;
+    height: 310px;
+    margin-top: 189px;
+    float: right;
+    background-image: url(./img/靶子.png);
+
+  }
+</style>
+<body>
+  <div class="people"></div>
+  <div class="bazi"></div>
+
+  
+</body>
+</html>

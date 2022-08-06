@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="dex">
+    <title>动态创建表格的删除和上下移动</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>移动</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 动态创建 -->
+        </tbody>
+    </table>
+    <script>
+
+        var datas = [{
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+
+        var tbody = document.querySelector('tbody');
+        
+  
+     
+        for(var i = 0; i < datas.length; i++){
+     
+            var tr = document.createElement('tr');
+ 
+
+            for( k in datas[i]){
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];    
+                tr.appendChild(td);
+            }
+            // 把tr放入tbody
+            tbody.appendChild(tr);
+            // 创建移动按钮
+            var moveTd = document.createElement('td');
+            // 添加删除按钮
+            var delTd = document.createElement('td');
+            moveTd.innerHTML = '<a href = "javascript:;" class = "up">上移</a> <a href = "javascript:;" class = "down">下移</a>'
+            delTd.innerHTML = '<a href = "javascript:;" class = "del">删除</a>'
+            // 将td放入tr中
+            tr.appendChild(moveTd);
+            tr.appendChild(delTd);
+        }
+            // 通过函数来封装 交换两个节点的内容
+        function swap(node1,node2){
+            // 获取此节点的tbody
+            var mainBody = node1.parentNode;
+            // 获取两节点的相对位置
+            var node1_null = node1.nextSibling;
+            var node2_null = node2.nextSibling;
+            
+            if(node1_null) mainBody.insertBefore(node2,node1_null);
+            else mainBody.appendChild(node2);
+            if(node2_null) mainBody.insertBefore(node1,node2_null);
+            else mainBody.appendChild(node1);
+        }
+
+        tbody.addEventListener('click',function(e){
+            if(e.target.className == 'up'){
+                var node1 = e.target.parentNode.parentNode;
+                var node1_front = node1.previousElementSibling;
+                if(node1_front){
+                    swap(node1,node1_front);
+                }
+                else{
+                    alert('已经是第一个了不能在点了')
+                }
+            }            
+            if(e.target.className == 'down'){
+                var node1 = e.target.parentNode.parentNode;
+                var node1_front = node1.nextElementSibling;
+                if(node1_front){
+                    swap(node1,node1_front);
+                }
+                else{
+                    alert('已经是第一个了不能在点了')
+                }
+            }
+            if(e.target.className == 'del'){
+                this.removeChild(e.target.parentNode.parentNode);             
+            }
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

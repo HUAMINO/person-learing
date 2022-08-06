@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style>
+    p {
+      width: 500px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 5px;
+    }
+
+    i {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background-color: green;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="file" accept="image/png, image/jpg" />
+  <button>上传</button>
+  <div>
+    <p><i id="progress"></i></p>
+    <img alt="" srcset="" id="preview">
+</body>
+<script>
+
+  let file = null
+  document.querySelector('input').addEventListener('change', function () {
+    file = this.files[0]
+  })
+  document.querySelector('button').addEventListener('click', function () {
+    if (!file) {
+      alert('请选择一张图片')
+      return
+    }
+    const xhr = new XMLHttpRequest()
+    xhr.open('post', 'http://ajax-base-api-t.itheima.net/api/upload/avatar')
+
+    // 如果发生的数据是图片、视频等文件，而不是字符串，就必须使用 FormData方式发送
+    const fd = new FormData()
+    fd.append('avatar', file)
+    // fd.append('username', 'aaa')
+    // fd.append('password', '111')
+
+    // 监听 xhr.upload 的 onprogress 事件
+    xhr.upload.onprogress = function (e) {
+      // e.lengthComputable 是一个布尔值，表示当前上传的资源是否具有可计算的长度
+      if (e.lengthComputable) {
+        // e.loaded 已传输的字节
+        // e.total  需传输的总字节
+        // console.log('已传输的字节：' + e.loaded)
+        // console.log('总字节：' + e.total)
+        const percent = Math.floor((e.loaded / e.total) * 100)
+        document.querySelector('#progress').style.width = percent + '%'
+      }
+    }
+
+    xhr.send(fd);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        // 代表响应全部回来了
+        // console.log(xhr.response)
+        let data = JSON.parse(xhr.response);
+        document.querySelector('#preview').src =
+          'http://ajax-base-api-t.itheima.net' + data.url;
+
+      }
+    }
+  })
+</script>
+
+</html>

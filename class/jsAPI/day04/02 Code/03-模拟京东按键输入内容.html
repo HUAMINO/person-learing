@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+    // 当我们按下s键的时候, input框 获取焦点
+    //input.focus()
+    //input.blur()
+
+    var input = document.querySelector('input');
+
+    document.addEventListener('keyup',function(e) {
+            // console.log(e);
+        if(e.keyCode == 83) {
+            input.focus();
+        }
+    })
+    </script>
+</body>
+
+</html>

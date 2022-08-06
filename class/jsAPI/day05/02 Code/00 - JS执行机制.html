@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Q1
+        console.log(1);
+
+        setTimeout(function() {
+            console.log(3);
+        }, 1000);
+        
+        console.log(2);
+
+        // 2. Q2
+        console.log(1);
+
+        setTimeout(function(){
+            console.log(3)
+        }, 0);
+        console.log(2);
+
+          //所有的同步任务都在 主线程的执行栈中执行。callSta
+         // 异步任务放到任务队列中等待执行.
+
+
+        // 3. Q3
+        console.log(1);
+        document.onclick = function() {
+            console.log('click');
+        }
+        console.log(2);
+        setTimeout(function() {
+            console.log(3)
+        }, 3000)
+
+
+        // 加了一个异步进程的概念 : 处理什么时候把回调函数写入任务队列
+        // setTimeout
+        // 注册事件  click 等事件 会交给 异步进程处理
+
+        // 同步任务: 同步仍无都在主线程上执行, 形成一个执行栈
+        // 异步任务: 异步任务是通过回调函数来完成的.
+
+        // 一般而言，异步任务有以下三种类型：
+        // 普通事件，如click，resize等
+        // 资源加载，如load，DOMContentLoaded等
+        // 定时器，包括setTimeout，setInterval等
+        // 其实就是那些回调函数
+
+
+
+        // JS执行机制 **** 理解记忆, 重点!
+        // 要求记下这块
+        // 1. 我们先判断JS任务是同步任务还是异步任务, 所有的同步任务都放入主线程的执行栈中执行.
+        // 2. 异步任务会提交给异步进程处理, 比如click事件, setTimeout等, 当满足触发条件后,
+        //    异步进程会将异步任务(回调函数)放入任务队列中.
+        // 3. 当主线程中所有的(所有的,所有的)同步任务执行完后, 会去任务队列中查找是否有可执行的异步任务, 如果有, 拿到主线程中执行,
+        //  执行完后, 再去任务队列中查找. 不断循环这样一个过程. 
+
+        //以后面试会考！ 90% 记下来；
+        
+        //简单版本的事件循环 主线程执行完毕，查询任务队列,取出一个任务，推入主线程处理；重复该动作
+
+        //事件循环 event loop;
+        //异步任务：又分为 宏任务（macTask） 和 微任务(microTask) 。
+            //宏任务：
+                //1.整个script代码块
+                //2.setTimeout
+                //3.setInterval
+                //4.setTimediate
+                
+            //微任务：
+                //1. promise.then() /promise.catch()
+                //2. process.nextTick 
+                //3. async await
+                //4. mutationObserver
+            //每执行一个宏任务，会清空(执行完成所有的)当前的微任务队列。
+
+
+        // http://latentflip.com/loupe 
+    </script>
+</body>
+</html>

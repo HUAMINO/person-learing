@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <p>我是第一个</p>
+            <span></span>
+        </li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+
+    <script>
+            // 1. 语法
+            // 克隆节点 : var dupNode = node.cloneNode()
+            // node.cloneNode()  
+            // node : 将要被复制, 克隆的节点
+            // dupNode : 复制后得到的节点  dup : duplicate 复制
+            var ul = document.querySelector('ul');
+            var li0 = ul.children[0];
+
+            var dup_li0 = li0.cloneNode(true);
+            console.log(dup_li0);
+            
+            //2.传参
+            //node.cloneNode(true);
+            //如果传true，深拷贝：表示 不仅克隆节点，节点内的内容也一起克隆（复制标签和里面的内容）
+            //node.cloneNode();不传参或者传false，浅拷贝，只复制标签，不复制内容
+            //实际开发用的时候，一般 传true
+
+         var  li1 = ul.children[1];
+         var dup_li1 = li1.cloneNode(true);
+         console.log(dup_li1);     
+         //添加到某个元素类
+         ul.appendChild(dup_li1);
+         //在指定的内容中添加
+         ul.insertBefore(dup_li0,ul.children[ul.children.length - 1])
+    </script>
+</body>
+
+</html>

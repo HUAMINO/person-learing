@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/echarts.min.js"></script>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="one" style="width: 600px;height:400px;"></div>
+    <div id="two" style="width: 600px;height:400px;"></div>
+    <div class="four" style="width: 600px;height:400px;"></div>
+</body>
+<script>
+    ;(function(){
+        var myChart = echarts.init(document.querySelector('.four'));
+ 
+        option = {
+            tooltip: {},
+            visualMap: {
+                show: false,
+                dimension: 2,
+                min: -1,
+                max: 1,
+                inRange: {
+                color: [
+                    '#313695',
+                    '#4575b4',
+                    '#74add1',
+                    '#abd9e9',
+                    '#e0f3f8',
+                    '#ffffbf',
+                    '#fee090',
+                    '#fdae61',
+                    '#f46d43',
+                    '#d73027',
+                    '#a50026'
+                ]
+                }
+            },
+            xAxis3D: {},
+            yAxis3D: {},
+            zAxis3D: {},
+            grid3D: {},
+            series: [
+                {
+                type: 'surface',
+                parametric: true,
+                // shading: 'albedo',
+                parametricEquation: {
+                    u: {
+                    min: -Math.PI,
+                    max: Math.PI,
+                    step: Math.PI / 20
+                    },
+                    v: {
+                    min: 0,
+                    max: Math.PI,
+                    step: Math.PI / 20
+                    },
+                    x: function (u, v) {
+                    return Math.sin(v) * Math.sin(u);
+                    },
+                    y: function (u, v) {
+                    return Math.sin(v) * Math.cos(u);
+                    },
+                    z: function (u, v) {
+                    return Math.cos(v);
+                    }
+                }
+                }
+            ]
+            };
+        myChart.setOption(option);
+        })()
+
+
+    ;(function(){
+        var myChart = echarts.init(document.getElementById('main'));
+
+        option = {
+            title: {
+                text: 'Basic Radar Chart'
+            },
+            legend: {
+                data: ['Allocated Budget', 'Actual Spending']
+            },
+            radar: {
+                // shape: 'circle',
+                indicator: [
+                { name: 'Sales', max: 6500 },
+                { name: 'Administration', max: 16000 },
+                { name: 'Information Technology', max: 30000 },
+                { name: 'Customer Support', max: 38000 },
+                { name: 'Development', max: 52000 },
+                { name: 'Marketing', max: 25000 }
+                ]
+            },
+            series: [
+                {
+                name: 'Budget vs spending',
+                type: 'radar',
+                data: [
+                    {
+                    value: [4200, 3000, 20000, 35000, 50000, 18000],
+                    name: 'Allocated Budget'
+                    },
+                    {
+                    value: [5000, 14000, 28000, 26000, 42000, 21000],
+                    name: 'Actual Spending'
+                    }
+                ]
+                }
+            ]
+};
+          myChart.setOption(option);
+
+
+    })()
+
+    //   饼图
+;(function(){
+    var myChart = echarts.init(document.getElementById('one'));
+      option = {
+        title: {
+            text: 'Stacked Line'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+            saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+            name: 'Email',
+            type: 'line',
+            stack: 'Total',
+            data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+            name: 'Union Ads',
+            type: 'line',
+            stack: 'Total',
+            data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+            name: 'Video Ads',
+            type: 'line',
+            stack: 'Total',
+            data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+            name: 'Direct',
+            type: 'line',
+            stack: 'Total',
+            data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+            name: 'Search Engine',
+            type: 'line',
+            stack: 'Total',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+};
+myChart.setOption(option);
+})()
+
+
+
+;(function(){
+    var myChart2 = echarts.init(document.getElementById('two'));
+    const data = genData(50);
+        option2 = {
+        title: {
+            text: '同名数量统计',
+            subtext: '纯属虚构',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            type: 'scroll',
+            orient: 'vertical',
+            right: 10,
+            top: 20,
+            bottom: 20,
+            data: data.legendData
+        },
+        series: [
+            {
+            name: '姓名',
+            type: 'pie',
+            radius: '55%',
+            center: ['40%', '50%'],
+            data: data.seriesData,
+            emphasis: {
+                itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+            }
+        ]
+        };
+        function genData(count) {
+        // prettier-ignore
+        const nameList = [
+                '赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈', '褚', '卫', '蒋', '沈', '韩', '杨', '朱', '秦', '尤', '许', '何', '吕', '施', '张', '孔', '曹', '严', '华', '金', '魏', '陶', '姜', '戚', '谢', '邹', '喻', '柏', '水', '窦', '章', '云', '苏', '潘', '葛', '奚', '范', '彭', '郎', '鲁', '韦', '昌', '马', '苗', '凤', '花', '方', '俞', '任', '袁', '柳', '酆', '鲍', '史', '唐', '费', '廉', '岑', '薛', '雷', '贺', '倪', '汤', '滕', '殷', '罗', '毕', '郝', '邬', '安', '常', '乐', '于', '时', '傅', '皮', '卞', '齐', '康', '伍', '余', '元', '卜', '顾', '孟', '平', '黄', '和', '穆', '萧', '尹', '姚', '邵', '湛', '汪', '祁', '毛', '禹', '狄', '米', '贝', '明', '臧', '计', '伏', '成', '戴', '谈', '宋', '茅', '庞', '熊', '纪', '舒', '屈', '项', '祝', '董', '梁', '杜', '阮', '蓝', '闵', '席', '季', '麻', '强', '贾', '路', '娄', '危'
+            ];
+        const legendData = [];
+        const seriesData = [];
+        for (var i = 0; i < count; i++) {
+            var name =
+            Math.random() > 0.65
+                ? makeWord(4, 1) + '·' + makeWord(3, 0)
+                : makeWord(2, 1);
+            legendData.push(name);
+            seriesData.push({
+            name: name,
+            value: Math.round(Math.random() * 100000)
+            });
+        }
+        return {
+            legendData: legendData,
+            seriesData: seriesData
+        };
+        function makeWord(max, min) {
+            const nameLen = Math.ceil(Math.random() * max + min);
+            const name = [];
+            for (var i = 0; i < nameLen; i++) {
+            name.push(nameList[Math.round(Math.random() * nameList.length - 1)]);
+            }
+            return name.join('');
+        }
+}
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+
+})()
+</script>
+</html>

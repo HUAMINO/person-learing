@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<script>
+
+   // function Person (name,age,gender) {
+   //   this.name =name;
+   //   this.age = age;
+   //   this.gender = gender;
+   //   this.sayName = function () {
+   //     alert(this.name)
+   //   }
+   // }
+
+   // var per = new Person("孙悟空",18,"男");
+   // console.log(per);
+
+   /* 方法 */
+   /* 对象的属性可以是任何数据类型，也可以是个函数
+      函数也可以称为对象的属性，
+      如果一个函数作为一个对象的属性保存
+      那我们称这个函数是这个对象的方法
+      调用函数就说调用对象的方法（method）
+      但是他只是名称上的区别没有其他任何的区别
+      
+      调用方法
+      obj.sayName();
+ 
+      调用函数
+      fun();
+      
+   
+   
+   */
+
+   /* 使用对象是否是这个对象的示列
+      对象 instanceof 构造函数
+      如果是，则返回true，否则就返回false
+   */
+   /* 使用同一个构造函数创建对象我们称为一个类对象了
+       也将一个构造函数称为一个类
+       我们将通过一个构造函数创建的对象，称为该类的实列
+  
+       所有的对象都是object的后代，
+       所以任何对象和Object做instanceof检查时都会返回true
+   */
+
+   /* this的情况：
+      1.当以函数的形式调用的时候this是window
+      2.当以方法的形式调用时，谁调用方法this就是谁
+      3.当以构造函数的形式调用时，this就是新创建的对象
+    
+   
+   */
+
+   /* for in 语句 
+      语法：
+      for(var 变量 in 对象) {
+  
+      }
+  
+  
+      for ... in 语句 对象中有几个属性，循环体就会执行几次
+      每次执行时，会将对象中的属性名赋值给我们的变量
+      console.log(obj[n])
+      
+   
+   */
+
+
+   //  function fun() {
+   //    console.log("为事故")
+   //  }
+   // console.log(per instanceof Person);
+
+   // console.log(window);
+
+
+   // function Person (name,age) {
+   //    this.name = name;
+   //    this.age = age;
+
+   // }
+
+
+   // function Car (name,age) {
+   //    this.name = name;
+   //    this.age = age;
+
+   // }
+
+   // var mc = new Person('wang',12);
+   // var mc2 = new Car('li',12);
+
+   // Person.prototype.toString = function () {
+   //    return this.name +"ddd" + this.age;
+
+   // }
+   // console.log(mc);
+
+
+
+
+
+
+   // console.log(Person.prototype==mc.__proto__);
+
+
+   //  属性名和属性值
+
+
+   //  var num1 = prompt("请输入第一个数");
+   //  // var fuHao = prompt("请输入运算符");
+   //  var num2 = prompt("请输入第二数");
+   //  var result = parseInt(num1) + parseInt(num2)
+
+   //  alert(`${num1} + ${num2} = ${result}`);
+   var str ='';
+
+   for(var i = 1;i<=9;i++) {
+
+      for(var j= 1;j<=i;j++){
+         str+= i + '*' + j+ '=' + i * j + " ";
+      } 
+      str+='\n';
+
+   }
+   console.log(str);
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

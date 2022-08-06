@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+    <script>
+        //节点：页面上所有的节点，元素节点，属性节点，文本节点，注释节点
+        var box = document.querySelector('.box');
+        /* 打印一个对象的所有属性和方法 */
+        console.dir(box);
+
+        //节点 nodeType 节点类型  nodeName 节点名称  nodeValue 值
+         //nodeType 1：元素节点
+         //nodeType 2：属性节点
+         //nodeType 1：文本节点
+         //nodeType 8：注释节点
+
+         //1. 父节点 node.parentNode 
+         //获取到的是最近的以及父节点，如果找不到返回null
+         var qrCode = document.querySelector('.erweima')
+         console.log(qrCode);
+         console.log(qrCode.parentNode);
+         
+         var grandFather = qrCode.parentNode.parentNode
+         console.log(grandFather);
+
+    </script>
+</body>
+
+</html>

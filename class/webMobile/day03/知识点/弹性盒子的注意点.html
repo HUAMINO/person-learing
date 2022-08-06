@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+      * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box {
+    margin: 100px auto;
+    width: 600px;
+    height: 600px;
+    background-color: pink;
+    display: flex;
+
+    /* 弹性盒子（子元素）不给高度的情况下默认高度会拉伸铺满父容器 */
+  }
+
+  .box div {
+    background-color: red;
+    /* 当块级元素是弹性盒子是默认宽度是0默认宽度会拉伸铺满父容器 */
+  }
+
+  .box span {
+    background-color: blue;
+    /* 给行内元素添加弹性容器是  display:fiex 宽度可以直接设置 */
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="div">ddd</div>
+    <span class="span">ddd</span>
+  </div>
+</body>
+</html>

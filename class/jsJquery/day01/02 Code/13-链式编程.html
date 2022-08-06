@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        
+        .show{
+            display: block;
+        }
+    </style>
+    <script>
+        div.classList.add('show')
+    </script>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <script>
+        $(function() {
+            // 1. 隐式迭代 给所有的按钮都绑定了点击事件
+            $("button").click(function() {
+                // 2. 让当前元素背景变为pink
+                $(this).css("background", "pink")
+                // 3. 让其余的兄弟元素不变色 
+                $(this).siblings().css("background", "")
+                
+                // 当前元素出现了多次，jq提供了一种更简洁的写法
+                // 使用链式编程， 注意对哪个对象执行方法！~
+                // 当前元素背景色pink，其余兄弟元素，背景色清空
+
+
+                
+            });
+        })
+    </script>
+</body>
+
+</html>

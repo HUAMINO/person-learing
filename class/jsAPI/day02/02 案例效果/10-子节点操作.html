@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <!-- <div>我是div</div>
+    <span>我是span</span> -->
+    <ul>
+        <li class="ddd">我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+
+    </ul>
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+
+
+    <script>
+ // 1. 父节点  node.parentNode (element.parentNode)
+
+        // 2. 子节点
+        var ul = document.querySelector('ul')
+        var lis = ul.querySelectorAll('li')
+
+        console.log(ul.children)  // [li, li , li ,li ]
+
+        // 获取第一个子元素节点
+        console.log(ul.children[0])
+            // 获取最后一个子元素节点
+            console.log(ul.children[ul.children.length - 1])
+    </script>
+</body>
+
+</html>

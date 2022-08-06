@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <a href="http://www.baidu.com">百度</a>
+    <form action="http://www.baidu.com">
+        <input type="submit" value="提交" name="sub">
+    </form>
+    <script>
+
+            // 常见事件对象的属性和方法
+            // 1. 返回事件类型 e.type 
+        var div = document.querySelector('div');
+        function foo(event){
+            console.log(event.type);
+        }
+
+        div.addEventListener('click',foo);
+        div.addEventListener('mouseover',foo)
+        div.addEventListener('mouseout',foo)
+        
+        // 2. 阻止默认行为 
+        // e.preventDefault() 
+        // 比如说 a标签, 点击的时候, href 会跳转 .
+        // 比如说, 表单点击会提交
+         var btn_a = document.querySelector('a');
+         btn_a.addEventListener('click',function(event){
+            console.log(event.type);
+            //1. 阻止默认行为
+            event.preventDefault();
+            //2.只阻止默认行为，不会影响后面的代码执行
+            console.log(123123);
+         })
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

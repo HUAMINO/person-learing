@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. keyup 松开键盘的时候触发
+        // document.addEventListener('keyup',function(event) {
+        //     console.log(event.type);
+        //     console.log("我弹起");
+        // })
+        // 2. keydown 按下按键的时候触发
+        // 2.1 keydown 一直按住, 会一直触发 
+        // 2.2 keydown 识别功能键  ctrl shift 上下左右箭头等
+
+        // document.addEventListener('keydown',function(event) {
+        //     console.log(event.type);
+        //     console.log("按下了");
+        // })
+
+        // 3.0 keypress 按下按键的时候触发
+        // 3.1 keypress 一直按住, 会一直触发
+        // 3.2 keypress 不能识别功能键 ctrl shift 等
+        document.addEventListener('keypress', function(e){
+            console.log(e.type)
+            console.log('我按下了 ----------keypress')
+        });
+
+    </script>
+</body>
+
+</html>

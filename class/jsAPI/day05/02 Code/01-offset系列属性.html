@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            /* position: fixed; */
+            top: 10;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid orange;
+            margin: 150px;
+        }        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+        }
+        /* .grand-father{
+            position: relative;
+        } */
+    </style>
+</head>
+
+<body>
+        <div class="grand-father">
+            <div class="father">
+                <div class="son"></div>
+            </div>
+        </div>
+
+    <script>
+        // 1. offset系列  offset偏移量 可以动态的获取我们元素的位置, 大小等
+        var father = document.querySelector('.father')
+        var son = document.querySelector('.son')
+
+        // 1. offsetLeft, offsetTop 获得元素距离带有定位父元素的位置, 返回值不带单位
+        console.log(father.offsetTop);
+        // 2. offsetWidth  offsetHeight 返回元素的大小, 包含border + padding + width
+        console.log(father.offsetWidth);
+
+        // 3. offsetParent 返回带有定位的父元素, 如果所有的父级都没有定位,返回body
+        
+
+ 
+    </script>
+</body>
+
+</html>
